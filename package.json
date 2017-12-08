@@ -4,10 +4,11 @@
   "description": "A personal blog built from scratch",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "node index.js"
   },
   "engines": {
-    "node" : "8.9.1"
+    "node": "8.9.1"
   },
   "keywords": [
     "blog",
