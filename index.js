@@ -1,4 +1,4 @@
-const port = 8000
+const port = process.env.PORT || 8090
 const express = require('express')
 let app = express()
 
