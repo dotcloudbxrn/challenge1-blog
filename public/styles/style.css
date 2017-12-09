@@ -54,15 +54,69 @@ table {
 html {
   color: #555
 }
+/*
+================= 
+TITLE
+=================
+*/
 
-h1 {
+.page-title {
   font-family: Courier New, Courier, monospace;
-  font-size: 40px;
+  font-size: 70px;
+  letter-spacing: 5px;
+}
+
+
+/* !!! THE CLEARFIX !!! */
+/* boogie */
+.person:before,
+.person:after {
+  content: '';
+  display: table;
+}
+.person:after {
+  clear: both;
+}
+/* END OF CLEARFIX */
+.person {
+  /* border: 5px solid blue; */
+}
+
+/* FLOAT MAGIC */
+.person-content {
+  width: 60%;
+  float: right;
+}
+
+.person-profile {
+  /* border: 3px solid gold; */
+  float: left;
+  margin: 25px 30px;
+}
+.profile-name {
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.profile-picture {
+  width: 300px;
+  height: 250px;
+  border: 3px dotted #555;
+}
+
+.wrapper {
+  float: left;
+  height: 120px;
+  width: 300px;
+  /* border: 1px solid red; */
+  margin: 15px 20px;
+  padding: 15px 20px;
 }
 .content {
-  margin: 25px;
-  padding: 10px 25px;
-  border-left: 2px solid #555;
+  display: block;
+  height: 100%;
+  padding: 0px 25px;
+  border-left: 3px solid #555;
+  /* border: 1px solid #666; */
 }
 .profile {
   text-decoration: none;
@@ -71,5 +125,5 @@ h1 {
   font-family: Andale -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 p {
-  line-height: 22px
+  line-height: 22px; 
 }
