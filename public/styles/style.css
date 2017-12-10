@@ -89,11 +89,32 @@ TITLE
 }
 
 .person-profile {
+  width: 30%;
   /* border: 3px solid gold; */
   float: left;
   margin: 25px 30px;
 }
+
+.person-content {
+  /* border: 4px solid green; */
+}
+
+.title {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 3px;
+}
+.title-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: royalblue;
+}
+.title-link:hover {
+  border-bottom: 2px solid orangered;
+}
+
 .profile-name {
+  padding-left: 15px;
+  margin-bottom: 5px;
   font-size: 30px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
