@@ -48,12 +48,6 @@ table {
 	border-spacing: 0;
 }
 
-
-
-/* --------------------- */
-html {
-  color: #555
-}
 /*
 ================= 
 TITLE
@@ -66,9 +60,12 @@ TITLE
   letter-spacing: 5px;
 }
 
+/*
+=============
+THE CLEARFIX
+=============
+*/
 
-/* !!! THE CLEARFIX !!! */
-/* boogie */
 .person:before,
 .person:after {
   content: '';
@@ -77,12 +74,22 @@ TITLE
 .person:after {
   clear: both;
 }
-/* END OF CLEARFIX */
+
+/*
+=============
+NAME ME
+=============
+*/
+
 .person {
   /* border: 5px solid blue; */
 }
 
-/* FLOAT MAGIC */
+/*
+=============
+NAME ME PLEASE
+=============
+*/
 .person-content {
   width: 60%;
   float: right;
