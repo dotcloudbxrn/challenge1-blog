@@ -19,4 +19,6 @@ module.exports = (settings) => {
   db.on('error', (err) => {
     throw err
   })
+
+  require('./../models/User')
 }

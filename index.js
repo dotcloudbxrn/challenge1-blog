@@ -8,6 +8,7 @@ require('./server/config/routes')(app)
 require('./server/config/logger')(app)
 require('./server/config/express')(app)
 require('./server/config/database')(settings)
+require('./server/config/passport')()
 
 app.listen(port)
 console.log(`Server successfully started on port ${port}`)

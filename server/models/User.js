@@ -19,7 +19,7 @@ userSchema.method({
 
 let User = mongoose.model('User', userSchema)
 
-model.exports.seedAdminUser = () => {
+module.exports.seedAdminUser = () => {
   User.find({}).then((users) => {
     if (users.length > 0) {
       console.log(`There are ${users.length} registered users.`)
