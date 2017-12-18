@@ -1,15 +1,18 @@
 <form class="form" action="/user/register" method="post">
-  <label for="username"> Choose your Username:
-    <input type="text" name="username">    
+  <label for="username"> Choose your Username:<br>
+    <input class="field" type="text" name="username">
   </label>
-  <label for="password"> Hand in a password:
-    <input type="password" name="password">  
+  <label for="password"> Type in a your password:<br>
+    <input class="field" type="password" name="password">
   </label>
-  <label for="first-name">First name:
-    <input type="text" name="lastname">    
+  <label for="confirm-password">Can you do that again? (...for fun):<br>
+    <input class="field" type="password" name="confirm">
   </label>
-  <label for="first-name">Last name:
-    <input type="text" name="firstname">  
+  <label for="first-name"> First name:<br>
+    <input class="field" type="text" name="lastname">  
+  </label>
+  <label for="first-name"> Last name:<br>
+    <input class="field" type="text" name="firstname">
   </label>
   <input type="submit" value="Register">
 </form>

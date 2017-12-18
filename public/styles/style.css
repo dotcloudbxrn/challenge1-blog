@@ -224,10 +224,11 @@ ARTICLE -> Article Content
 
 article{
 	grid-area: content;
-	background: #0a2138;
+	background: #2e6394;
 }
 
 .user-content {
+	grid-gap: 5px;
 	color: #F7B733;
 	display: grid;
 	height: 30vh;
@@ -237,20 +238,19 @@ article{
 	grid-template-areas: ". u u p p p p p p";
 	grid-template-rows: 1fr;
 	border-radius: 5px;
-	border: 5px solid rebeccapurple;
 }
 
 .user-profile {
 	grid-area: u;
-	height: 100%;
+	height: 90%;
 	width: 90%;
-	border: 3px solid #fff;
+	border: 3px solid #fff;	
 }
 
 .user-posts {
 	grid-area: p;
 	border: 3px solid #fff;
-	height: 100%;
+	height: 90%;
 	width: 100%;
 }
 /*
@@ -279,23 +279,40 @@ FORM REGISTRATION
 	width: 60vw;
 	display: grid;
 	grid-template-columns: 1fr;
-	justify-items: right;
+	justify-content: center;
 	align-content: center;
-	grid-gap: 20px;
+	grid-gap: 30px;
 	border-radius: 5px;
-	border: 3px solid white;
 }
-
+.form label {
+	text-align: center;
+}
 input[type=text], input[type=password] {
+	font-size: .9 em;
+	font-family: Bungee;
 	width: 60%;
 	padding: 10px 12px;
-	border: 3px solid #ffffff;
+	border: 5px solid #bebebe;
 	border-radius: 6px;
-	background: #f58b00f5;
+	background: #fff;
+	transition: .5s;
 }
 
+input[class=field]:focus {
+	border: 5px solid #fff;
+}
+
+
 input[type=submit] {
-	width: 20%;
+	font-family: Bungee;
+	font-size: 1.1em;
+	padding: 5px;
+	width: 50%;
+	height: 150%;
+	justify-self: center;
+	border: 5px solid #bebebe;
+	background: #F7B733;
+	border-radius: 5px;
 }
 /*
 ---------------------------
