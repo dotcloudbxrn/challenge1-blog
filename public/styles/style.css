@@ -1,4 +1,11 @@
-/* ERIC MEYERS CSS RESET */
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+/*
+======================
+RESET
+======================
+*/
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -9,11 +16,11 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+b, u, i, center,	
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
+article, nav, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
@@ -25,7 +32,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, nav, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -49,109 +56,195 @@ table {
 }
 
 /*
-================= 
-TITLE
-=================
+==========================
+BEGIN
+==========================
 */
 
-.page-title {
-  font-family: Courier New, Courier, monospace;
-  font-size: 70px;
-  letter-spacing: 5px;
+/*
+Pallette
+	color: #0a2138; - Pullover
+	color: #333a42; - Pants
+	color: #4d6839; - Socks (should be this color)	
+	background: #125e14; - T-shirt
+	color: #bcae29; - War is not the answer
+	color: #F7B733; - Sunshine
+
+*/
+
+html, body {
+	height: 100vh;
+	width: 100vw;
+	font-size: 100%;
 }
 
 /*
-=============
-THE CLEARFIX
-=============
+==========================
+GRID -> Site Structure
+==========================
 */
 
-.person:before,
-.person:after {
-  content: '';
-  display: table;
+/* MAX RESOLUTION */
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: 80px auto 80px;
+	grid-template-areas: "head head"
+												"content content"
+												"footer footer";
 }
-.person:after {
-  clear: both;
+
+/* TO-DO MOBILE RESOLUTION */
+
+
+/*
+==========================
+HEADER -> Site Nav
+==========================
+*/
+
+body {
+	font-family: Bungee;
+	font-size: 28px;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-area: head;
+	padding: 15px 30px;
+	color: #bcae29;
+	background: #125e14;
+}
+
+header > div {
+	margin-right: 15px;
+}
+header > div:hover {
+	font-size: 110%;
+	color: #F7B733;
+}
+
+header > div:nth-child(3) {
+	margin-left: auto;
+}
+
+
+/*
+==========================
+Nav -> User Menu
+==========================
+*/
+
+nav {
+	grid-area: menu;
+	overflow: auto;
+	transition: all 1s;
+	background: #4d6839;
+}
+
+nav > ul {
+	display: grid;
+	justify-content: center;
+	grid-gap: 20px;
+	margin-top: 20px;
+	color: #fff;
+	letter-spacing: .8px;
+	font-size: 20px;
+}
+
+nav ul li::first-letter {
+	font-size: 24px;
+	color: #273e63;
+}
+
+nav > ul > li:hover {
+	color: #161c13;
+}
+
+.toggle {
+	text-decoration: none;
+	color: #bcae29;
+	/* remove dotted line around active link */
+	outline: 0;
+}
+
+.toggle:hover {
+	font-size: 110%;
+	color: #F7B733;
+}
+
+
+
+#menu {
+	transition: transform .3s ease-in-out;
+	top: 0;
+	bottom: 0;
+	min-height: 100vh;
+	position: fixed;
+	width: 300px;
+	left: -340px;
+}
+
+#menu:target {
+	transform: translateX(340px);
+}
+
+
+/* the X icon */
+.close {
+	text-align: right;
+	display: block;
+	text-decoration: none;
+	position: relative;
+	top: 15px;
+	right: 15px;
+}
+
+
+
+/*
+---------------------------
+Media query for grid layout
+---------------------------
+*/
+
+@media only screen and (max-width: 699px) {
+	body, nav, li {
+		font-size: 18px;
+	}
+	
+	body {
+		grid-template-columns: 1fr 4fr;
+		grid-template-rows: 50px auto 50px;
+	}
+
+	#menu {
+		width: 250px;
+	}
 }
 
 /*
-=============
-NAME ME
-=============
+==========================
+ARTICLE -> Article Content
+==========================
 */
 
-.person {
-  /* border: 5px solid blue; */
+article{
+	grid-area: content;
+	background: #0a2138;
 }
 
 /*
-=============
-NAME ME PLEASE
-=============
+==========================	
+FOOTER -> Site Footer
+==========================
 */
-.person-content {
-  width: 60%;
-  float: right;
-}
 
-.person-profile {
-  width: 30%;
-  /* border: 3px solid gold; */
-  float: left;
-  margin: 25px 30px;
-}
-
-.person-content {
-  /* border: 4px solid green; */
-}
-
-.title {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin-bottom: 3px;
-}
-.title-link {
-  text-decoration: none;
-  font-size: 20px;
-  color: royalblue;
-}
-.title-link:hover {
-  border-bottom: 2px solid orangered;
-}
-
-.profile-name {
-  padding-left: 15px;
-  margin-bottom: 5px;
-  font-size: 30px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
-.profile-picture {
-  width: 300px;
-  height: 250px;
-  border: 3px dotted #555;
-}
-
-.wrapper {
-  float: left;
-  height: 120px;
-  width: 300px;
-  /* border: 1px solid red; */
-  margin: 15px 20px;
-  padding: 15px 20px;
-}
-.content {
-  display: block;
-  height: 100%;
-  padding: 0px 25px;
-  border-left: 3px solid #555;
-  /* border: 1px solid #666; */
-}
-.profile {
-  text-decoration: none;
-}
-.author {
-  font-family: Andale -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
-p {
-  line-height: 22px; 
+footer {
+	grid-area: footer;
+	grid-column: span 12;
+	background: #333a42;
 }

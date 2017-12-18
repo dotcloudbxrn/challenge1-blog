@@ -3,18 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <link href="/styles/style.css" type="text/css" rel="stylesheet"/>
-  <title>Document</title>
+	<link rel="icon" href="/images/favicon.ico"/>
+  <title>Challenge 1 - Blog</title>
 </head>
 <body>
-  <main class="main">
-    <nav class="sitenav">
-      <ul class="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/user/register">Register</a></li>        
-        <li><a href="/article/list">All Articles</a></li>
-      </ul>
-    </nav>
-    {{{body}}}
-  </main>
+	<header id="header">
+		<div>Home</div>
+		<div><a class="toggle open" href="#menu">Menu</a></div>
+		<div>Logout</div>
+	</header>
+	<nav class="aside-menu" id="menu">
+		<a class="toggle close" href="#">×</a>
+		<ul>
+			<li>Create Article</li>
+			<li>Other Users</li>
+			<li>Have lunch</li>
+			<li>Your comments</li>
+			<li>Favourites</li>
+		</ul>
+	</nav>
+	<article class="main-content" id="content">
+    {{{ body }}}
+  </article>
+	<footer  id="footer"></footer>
 </body>
 </html>
