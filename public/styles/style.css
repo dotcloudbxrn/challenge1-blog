@@ -313,7 +313,14 @@ input[type=submit] {
 	border: 5px solid #bebebe;
 	background: #F7B733;
 	border-radius: 5px;
+	transition: all 1s;
 }
+
+input[type=submit]:hover {
+	color: #161c13;
+	background: rgb(255, 137, 40);
+}
+
 /*
 ---------------------------
 Media query for grid layout
