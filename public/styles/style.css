@@ -76,7 +76,11 @@ html, body {
 	height: 100vh;
 	width: 100vw;
 	font-size: 100%;
+	box-sizing: border-box;
+	color: rgb(243, 57, 32);
 }
+
+
 
 /*
 ==========================
@@ -116,7 +120,16 @@ header {
 	grid-area: head;
 	padding: 15px 30px;
 	color: #bcae29;
-	background: #125e14;
+	background: linear-gradient(to right top, #125e14, #53a813);
+}
+
+header a {
+	text-decoration: none;
+	color: #bcae29;
+}
+
+header a:hover {
+	color: #F7B733;
 }
 
 header > div {
@@ -142,7 +155,7 @@ nav {
 	grid-area: menu;
 	overflow: auto;
 	transition: all 1s;
-	background: #4d6839;
+	background: #53a813;
 }
 
 nav > ul {
@@ -172,10 +185,8 @@ nav > ul > li:hover {
 }
 
 .toggle:hover {
-	font-size: 110%;
 	color: #F7B733;
 }
-
 
 
 #menu {
@@ -206,6 +217,87 @@ nav > ul > li:hover {
 
 
 /*
+==========================
+ARTICLE -> Article Content
+==========================
+*/
+
+article{
+	grid-area: content;
+	background: #0a2138;
+}
+
+.user-content {
+	color: #F7B733;
+	display: grid;
+	height: 30vh;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-areas: ". u u p p p p p p";
+	grid-template-rows: 1fr;
+	border-radius: 5px;
+	border: 5px solid rebeccapurple;
+}
+
+.user-profile {
+	grid-area: u;
+	height: 100%;
+	width: 90%;
+	border: 3px solid #fff;
+}
+
+.user-posts {
+	grid-area: p;
+	border: 3px solid #fff;
+	height: 100%;
+	width: 100%;
+}
+/*
+==========================	
+FOOTER -> Site Footer
+==========================
+*/
+
+footer {
+	grid-area: footer;
+	grid-column: span 12;
+	background: #333a42;
+}
+
+
+
+/* 
+=========================
+FORM REGISTRATION
+=========================
+ */
+
+.form {
+	font-size: 80%;
+	margin: 30px auto;
+	width: 60vw;
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: right;
+	align-content: center;
+	grid-gap: 20px;
+	border-radius: 5px;
+	border: 3px solid white;
+}
+
+input[type=text], input[type=password] {
+	width: 60%;
+	padding: 10px 12px;
+	border: 3px solid #ffffff;
+	border-radius: 6px;
+	background: #f58b00f5;
+}
+
+input[type=submit] {
+	width: 20%;
+}
+/*
 ---------------------------
 Media query for grid layout
 ---------------------------
@@ -224,27 +316,11 @@ Media query for grid layout
 	#menu {
 		width: 250px;
 	}
-}
 
-/*
-==========================
-ARTICLE -> Article Content
-==========================
-*/
-
-article{
-	grid-area: content;
-	background: #0a2138;
-}
-
-/*
-==========================	
-FOOTER -> Site Footer
-==========================
-*/
-
-footer {
-	grid-area: footer;
-	grid-column: span 12;
-	background: #333a42;
+	.user-content {
+		display: grid;
+		grid-template-columns: repeat(9, 1fr);
+		grid-template-areas: "u u u p p p p p p";
+		grid-template-rows: 1fr;
+	}
 }

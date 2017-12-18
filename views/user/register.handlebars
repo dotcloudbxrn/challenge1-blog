@@ -1,7 +1,15 @@
-<form action="/user/register" method="post">
-  <input type="text" name="username" value="Username...">
-  <input type="text" name="firstname">
-  <input type="text" name="lastname">
-  <input type="password" name="password">
+<form class="form" action="/user/register" method="post">
+  <label for="username"> Choose your Username:
+    <input type="text" name="username">    
+  </label>
+  <label for="password"> Hand in a password:
+    <input type="password" name="password">  
+  </label>
+  <label for="first-name">First name:
+    <input type="text" name="lastname">    
+  </label>
+  <label for="first-name">Last name:
+    <input type="text" name="firstname">  
+  </label>
   <input type="submit" value="Register">
 </form>
