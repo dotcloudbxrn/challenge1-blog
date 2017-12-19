@@ -8,28 +8,33 @@
 </head>
 <body>
 	<header id="header">
-		<div><a href="/">Home</a></div>
+		<div><a href="/" id="home-link">Home</a></div>
 		<div><a class="toggle open" href="#menu">Menu</a></div>
 		{{#if currentUser}}
 			<div><a href="/user/me">{{currentUser.username}}</a></div>
 			<form id='logout-form' action='/user/logout' method="POST"></form>
 			<div><a href="javascript:document.getElementById('logout-form').submit()">Logout</a></div>
 		{{else}}
-			<div><a href="/user/login">Log in</a></div>
+			<div><a href="/user/login" id="login">Log in</a></div>
 			<div><a href="/user/register">Register</a></div>
 		{{/if}}
 	</header>
 	<nav class="aside-menu" id="menu">
 		<a class="toggle close" href="#">×</a>
+		<p id="menu-label">User Menu</p>
 		<ul>
-			<li>Create Article</li>
-			<li>Other Users</li>
+			<li>Create article</li>
+			<li>Your articles</li>
+			<li>Other users</li>
 			<li>Have lunch</li>
 			<li>Your comments</li>
 			<li>Favourites</li>
 		</ul>
 	</nav>
 	<article class="main-content" id="content">
+		{{#if globalError}}
+			<h3 class="notif">{{globalError}}</h3>
+		{{/if}}
     {{{ body }}}
   </article>
 	<footer  id="footer"></footer>

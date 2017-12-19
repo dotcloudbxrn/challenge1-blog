@@ -9,10 +9,17 @@ module.exports = {
   registerPost: (req, res) => {
     let reqUser = req.body
     // add validation maybe
+      if(!reqUser.username || !reqUser.password || !reqUser.firstName || !reqUser.lastName) {
+        res.locals.globalError = 'Invalid User Data'
+        res.render('user/register')
+        return
+      }
     let salt = encryption.generateSalt()
     let hashedPassword = encryption.generateHashedPassword(salt, reqUser.password)
     User.create({
-      username: reqUser.username,
+      // I'm aware it's horrible to use toLowerCase for the username, but the fontface I chose 
+      // doesn't differentiate between capital and lowercase characters, so...
+      username: reqUser.username.toLowerCase(),
       firstName: reqUser.firstName,
       lastName: reqUser.lastName,
       salt: salt,
@@ -39,14 +46,14 @@ module.exports = {
 
   loginPost: (req, res) => {
     let reqUser = req.body
-    User.findOne({username:reqUser.username}).then((user) => {
+    User.findOne({username:reqUser.username.toLowerCase()}).then((user) => {
       if (!user) {
         res.locals.globalError = 'Invalid user data'
         res.render('user/login')
         return
       }
       if (!user.authenticate(reqUser.password)) {
-        res.locals.globalError = 'Invaliiiiid user data'
+        res.locals.globalError = 'Invalid user data'
         res.render('user/login')
         return
       }
