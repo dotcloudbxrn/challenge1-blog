@@ -19,6 +19,8 @@ userSchema.method({
 
 let User = mongoose.model('User', userSchema)
 
+module.exports = User
+
 module.exports.seedAdminUser = () => {
   User.find({}).then((users) => {
     if (users.length > 0) {
@@ -30,8 +32,8 @@ module.exports.seedAdminUser = () => {
     let hashedPass = encryption.generateHashedPassword(salt, 'password')
     User.create({
       username: 'admin',
-      firstname: 'Apostol',
-      lastname: 'Tonev',
+      firstName: 'Apostol',
+      lastName: 'Tonev',
       salt, 
       hashedPass,
       roles: ['Admin']

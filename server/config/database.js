@@ -21,4 +21,6 @@ module.exports = (settings) => {
   })
 
   require('./../models/User')
+  let User = require('./../models/User')
+  User.seedAdminUser()
 }

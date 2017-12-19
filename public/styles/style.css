@@ -167,7 +167,9 @@ nav > ul {
 	letter-spacing: .8px;
 	font-size: 20px;
 }
-
+nav ul li:first-of-type {
+	margin-top: 35px;
+}
 nav ul li::first-letter {
 	font-size: 24px;
 	color: #273e63;
@@ -251,7 +253,7 @@ article{
 	grid-area: p;
 	border: 3px solid #fff;
 	height: 90%;
-	width: 100%;
+	width: 90%;
 }
 /*
 ==========================	
