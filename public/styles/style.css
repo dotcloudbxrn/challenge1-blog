@@ -97,6 +97,7 @@ body {
 	grid-template-areas: "head head"
 												"content content"
 												"footer footer";
+	text-align: center;
 }
 
 /* TO-DO MOBILE RESOLUTION */
@@ -330,25 +331,23 @@ Main User Proifle Layout
 /* HOME PAGE LAYOUT */
 
 .user-content {
-	grid-gap: 50px;
 	color: #F7B733;
 	display: grid;
-	/* height: 30vh; */
 	justify-items: center;
-	align-items: center;
 	grid-template-columns: repeat(9, 1fr);
-	grid-template-areas: ". u u p p p p p p";
+	grid-template-areas: "u u u p p p p p p";
 	grid-template-rows: 250px;
 	border-radius: 5px;
 }
 
 .user-profile {
 	grid-area: u;
-	height: 80%;
-	width: 80%;
 }
 
 .user-profile-picture {
+	display: block;
+	align-self: center;
+	margin: 5px auto;
 	height: 80%;
 }
 
@@ -363,7 +362,7 @@ Main User Proifle Layout
 .user-posts {
 	grid-area: p;
 	height: 90%;
-	width: 90%;
+	width: 100%;
 	border: 6px solid #fff;
 }
 
