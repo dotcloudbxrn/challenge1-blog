@@ -69,7 +69,11 @@ module.exports = {
       console.log(err)
     })
   },
-  me:(req, res) => {
-    res.render('user/me')
+  getProfile:(req, res) => {
+    let id = req.params.id
+    User.findById(id).then((user) => {
+      if (!user) console.log('User not found')
+      res.render('user/profile', {user})
+    })
   }
 }
