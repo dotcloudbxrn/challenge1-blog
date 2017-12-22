@@ -1,6 +1,13 @@
   {{#each users}}
     <div class="user-content">
-      <div class="user-profile"><a href="user/profile/{{this._id}}">{{this.username}}</a></div>
-      <div class="user-posts">Posts of {{this.firstName}} {{this.lastName}}</div>
+      <div class="user-profile">
+        <a href="user/profile/{{this._id}}">
+          <div class="user-profile-picture"><img class="profile-picture" src="{{this.avatar}}"/></div>
+          <div class="user-profile-username">{{this.username}}</div>
+        </a>
+      </div>
+      <div class="user-posts">
+        Posts of {{this.firstName}} {{this.lastName}}
+      </div>
     </div>
   {{/each}} 

@@ -246,41 +246,15 @@ nav > ul > li:hover {
 
 /*
 ==========================
-ARTICLE -> Article Content
+ARTICLE -> Article Content (surrounds {{{BODY}}})
 ==========================
 */
 
-article{
+article {
 	grid-area: content;
 	background: #efefef;
 }
 
-.user-content {
-	grid-gap: 5px;
-	color: #F7B733;
-	display: grid;
-	height: 30vh;
-	justify-items: center;
-	align-items: center;
-	grid-template-columns: repeat(9, 1fr);
-	grid-template-areas: ". u u p p p p p p";
-	grid-template-rows: 1fr;
-	border-radius: 5px;
-}
-
-.user-profile {
-	grid-area: u;
-	height: 90%;
-	width: 90%;
-	border: 3px solid #fff;	
-}
-
-.user-posts {
-	grid-area: p;
-	border: 3px solid #fff;
-	height: 90%;
-	width: 90%;
-}
 /*
 ==========================	
 FOOTER -> Site Footer
@@ -352,6 +326,66 @@ input[type=submit]:hover {
 Main User Proifle Layout
 ========================
 */
+
+/* HOME PAGE LAYOUT */
+
+.user-content {
+	grid-gap: 50px;
+	color: #F7B733;
+	display: grid;
+	/* height: 30vh; */
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-areas: ". u u p p p p p p";
+	grid-template-rows: 250px;
+	border-radius: 5px;
+}
+
+.user-profile {
+	grid-area: u;
+	height: 80%;
+	width: 80%;
+	border: 3px solid #fff;	
+}
+
+.user-profile-picture {
+	width: 80%;
+}
+.user-profile-username {
+	width: 100%;
+	height: 20%;
+}
+.profile-picture {
+	width: 100%;
+	height: 80%;
+}
+
+
+.user-profile-username {
+	text-align: center;
+}
+
+.user-posts {
+	grid-area: p;
+	border: 3px solid #fff;
+	height: 90%;
+	width: 90%;
+}
+
+.user-content a {
+	outline: none;
+	text-decoration: none;
+	color: #F7B733;
+}
+
+.user-content a:hover {
+	color: #88d317;
+}
+
+
+/* PROFILE PAGE LAYOUT */
+
 .main-user-profile {
 	color: #233237;
 	text-align: center;
@@ -409,6 +443,10 @@ Main User Proifle Layout
 	text-decoration: underline;
 	color: #f33920;
 }
+
+
+
+
 /*
 ---------------------------
 Media query for grid layout

@@ -6,6 +6,7 @@ let userSchema = new mongoose.Schema({
   username: { type: String, required: pathIsRequired, unique: true},
   firstName: { type: String, required: pathIsRequired},
   lastName: { type: String, required: pathIsRequired},
+  avatar: { type: String, default: "/images/default-profile-pic.jpg"},
   bio: { type: String },
   salt: String,
   hashedPass: String,
