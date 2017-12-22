@@ -346,21 +346,15 @@ Main User Proifle Layout
 	grid-area: u;
 	height: 80%;
 	width: 80%;
-	border: 3px solid #fff;	
 }
 
 .user-profile-picture {
-	width: 80%;
-}
-.user-profile-username {
-	width: 100%;
-	height: 20%;
-}
-.profile-picture {
-	width: 100%;
 	height: 80%;
 }
 
+.profile-picture {
+	height: 100%;
+}
 
 .user-profile-username {
 	text-align: center;
@@ -368,9 +362,9 @@ Main User Proifle Layout
 
 .user-posts {
 	grid-area: p;
-	border: 3px solid #fff;
 	height: 90%;
 	width: 90%;
+	border: 6px solid #fff;
 }
 
 .user-content a {
@@ -463,7 +457,7 @@ Media query for grid layout
 
 	body, nav, li {
 		text-align: center;
-		font-size: 16px;
+		font-size: 18px;
 	}
 	
 	body {
@@ -480,6 +474,7 @@ Media query for grid layout
 		color: #88d317;
 	}
 
+
 	#menu-label {
 		margin-top: 25px;
 		font-size: 20px;
@@ -487,8 +482,17 @@ Media query for grid layout
 
 	#profile-pic {
 		grid-area: pic;
-		width: 120px;
-		height:120px;
+		width: 150px;
+		height:150px;
+	}
+
+	.user-profile {
+		grid-area: u;
+		width: 80%;
+	}
+
+	.profile-picture {
+		width: 100%;
 	}
 
 }
