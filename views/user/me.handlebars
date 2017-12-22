@@ -1,5 +1,9 @@
 <div class="main-user-profile">
-    <p class="pic">This is my picture</p>
-    <p>Name:</p>
-		<p>A short description:</p>
+  <p id="profile-pic"><img id="profile-pic-image" src="/images/default-profile-pic.jpg"></p>
+  <div id="profile-descr">
+    <p id="profile-name"><span class="profile-label">Name: </span> {{currentUser.firstName}} {{currentUser.lastName}}</p>
+    <p><span class="profile-label">How I introduce myself with a few sentences: </span></p>
+    <p id="profile-bio">This is example text. I really want to understand how it looks like. It should be a cool thing to look at. It may containt a limited amount of characters. </p>
+    <p><span class="profile-label">My articles: </span><a href="#" id="profile-articles-link">Click!</span></p>
+  </div>
 </div>

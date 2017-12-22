@@ -1,4 +1,5 @@
 const controllers = require('./../controllers/index')
+const auth = require('./auth')
 
 module.exports = (app) => {
   app.get('/', controllers.home.index)
@@ -7,4 +8,5 @@ module.exports = (app) => {
   app.get('/user/login', controllers.user.loginGet)
   app.post('/user/login', controllers.user.loginPost)
   app.post('/user/logout', controllers.user.logout)
+  app.get('/user/me', auth.isAuthenticated, controllers.user.me)
 }

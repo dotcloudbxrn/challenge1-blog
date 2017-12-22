@@ -9,7 +9,7 @@ module.exports = (app) => {
   app.engine('handlebars', exphbs({defaultLayout: 'main'}))
   app.set('view engine', 'handlebars')
   app.use(bodyParser.urlencoded({extended: true}))
-  app.use(cookieParser())
+  // app.use(cookieParser())
   app.use(session({ secret: "superSecretStuff12345", resave: false, saveUninitialized: false }))
   app.use(passport.initialize())
   app.use(passport.session())

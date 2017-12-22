@@ -68,5 +68,8 @@ module.exports = {
     }).catch((err) => {
       console.log(err)
     })
+  },
+  me:(req, res) => {
+    res.render('user/me')
   }
 }
