@@ -194,6 +194,16 @@ nav > ul {
 	letter-spacing: .8px;
 	font-size: 20px;
 }
+
+nav ul a {
+	color: #88d317;
+	text-decoration: none;
+	outline: none;
+}
+nav ul a:hover {
+	color: #F7B733;
+}
+
 nav ul li:first-of-type {
 	margin-top: 35px;
 }
@@ -254,6 +264,37 @@ ARTICLE -> Article Content (surrounds {{{BODY}}})
 article {
 	grid-area: content;
 	background: #efefef;
+}
+
+#publish-article {
+	width: 525px;
+}
+
+#article-body {
+	font-family: Bungee;
+	font-size: 1.1em;
+	border-radius: 5px;
+	border: 5px solid #bebebe;
+	margin: 15px;
+	width: 90%;
+	height: 600px;
+}
+/* 
+=============================
+PUBLISH - Post creation
+=============================
+*/
+
+.article-div {
+	margin: 20px;
+}
+
+#article-title {
+	margin-bottom: 15px;
+}
+
+.article-property {
+	margin: 10px;
 }
 
 /*
@@ -362,7 +403,7 @@ Main User Proifle Layout
 .user-posts {
 	grid-area: p;
 	height: 90%;
-	width: 100%;
+	width: 95%;
 	border: 6px solid #fff;
 }
 
@@ -494,4 +535,7 @@ Media query for grid layout
 		width: 100%;
 	}
 
+	#publish-article {
+		width: 300px;
+	}
 }

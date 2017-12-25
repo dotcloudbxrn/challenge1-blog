@@ -23,7 +23,8 @@ module.exports = {
       firstName: reqUser.firstName,
       lastName: reqUser.lastName,
       salt: salt,
-      hashedPass: hashedPassword
+      hashedPass: hashedPassword,
+      roles: ['user']
     }).then((user) => {
       req.logIn(user, (err, user) => {
         if (err) {

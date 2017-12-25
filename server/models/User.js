@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose')
 const encryption = require('./../utils/encryption')
 const pathIsRequired = '{PATH} is required.'
@@ -10,7 +11,8 @@ let userSchema = new mongoose.Schema({
   bio: { type: String },
   salt: String,
   hashedPass: String,
-  roles: [String]
+  roles: [String],
+  articles: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Article'} ]
 })
 
 userSchema.method({
