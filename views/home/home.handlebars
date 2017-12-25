@@ -1,13 +1,17 @@
-  {{#each users}}
-    <div class="user-content">
-      <div class="user-profile">
-        <a class="user-profile-picture" href="user/profile/{{this._id}}">
-          <img class="profile-picture" src="{{this.avatar}}"/>
-        </a>
-        <a href="user/profile/{{this._id}}">{{this.username}}</a>
-      </div>
-      <div class="user-posts">
-        Posts of {{this.firstName}} {{this.lastName}}
-      </div>
+{{#each users}}
+  <div class="user-content">
+    <div class="user-profile">
+      <a class="user-profile-picture" href="user/profile/{{this._id}}">
+        <img class="profile-picture" src="{{this.avatar}}"/>
+      </a>
+      <a href="user/profile/{{this._id}}">{{this.username}}</a>
     </div>
-  {{/each}} 
+    <div class="user-posts">
+      {{#each this.articles}}
+        <div class="user-article">
+          Post: {{this.title}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/each}}
