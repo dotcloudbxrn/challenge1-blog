@@ -408,19 +408,25 @@ Main User Proifle Layout
 }
 
 .user-posts {
+	overflow: hidden;
 	display: flex;
 	flex-wrap: nowrap;
-	overflow-x: auto;
 	grid-area: p;
 	height: 90%;
 	width: 95%;
 	border: 6px solid #fff;
+	border-radius: 8px;
 	min-width: 95%;
 	min-height: 200px;
 }
 
 .user-article {
 	flex: 0 0 auto;
+	border: 3px solid yellowgreen;
+	border-radius: 6px;
+	min-width: 300px;
+	max-width: 300px;
+	word-wrap: break-word;
 }
 
 .user-content a {
@@ -431,6 +437,31 @@ Main User Proifle Layout
 
 .user-content a:hover {
 	color: #88d317;
+}
+
+.user-article-title {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 1.1em;
+}
+
+.article-body {
+	color: #4d6839;
+	letter-spacing: .5px;
+	word-spacing: 1px;
+	text-align: left;
+	padding: 10px;
+	height: 150px;
+	font-size: .7em;
+	font-style: italic;
+}
+
+abbr {
+	text-decoration: none;
+}
+
+.article-body::first-letter {
+	padding-left: 15px;
 }
 
 
@@ -553,5 +584,10 @@ Media query for grid layout
 
 	#publish-article {
 		width: 300px;
+	}
+
+	.user-article {
+		min-width: 150px;
+		max-width: 150px;
 	}
 }

@@ -4,11 +4,19 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const passport = require('passport')
+const hbsHelpers = require('./../utils/hbsHelpers')
 
 module.exports = (app) => {
-  app.engine('handlebars', exphbs({defaultLayout: 'main'}))
   app.set('view engine', 'handlebars')
   app.use(bodyParser.urlencoded({extended: true}))
+  app.engine('handlebars', exphbs({
+    defaultLayout: 'main',
+    helpers: {
+      truncTitle: hbsHelpers.truncTitle,
+      truncBody: hbsHelpers.truncBody
+    }
+  }))
+
   // app.use(cookieParser())
   app.use(session({ secret: "superSecretStuff12345", resave: false, saveUninitialized: false }))
   app.use(passport.initialize())

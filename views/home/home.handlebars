@@ -9,7 +9,13 @@
     <div class="user-posts">
       {{#each this.articles}}
         <div class="user-article">
-          Post: {{this.title}}
+          <div class="user-article-title">
+            <a class="article-title-link"
+              href="article/details/{{this._id}}">
+              <abbr title="{{this.title}}">{{truncTitle this.title}}</abbr>
+            </a>
+          </div>
+          <div class="article-body">{{truncBody this.bodyText}}</div>
         </div>
       {{/each}}
     </div>
