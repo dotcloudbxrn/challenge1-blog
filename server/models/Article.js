@@ -3,7 +3,8 @@ const encryption = require('./../utils/encryption')
 const pathIsRequired = '{PATH} is required.'
 
 let articleSchema = new mongoose.Schema({
-  author: {type: String, required: pathIsRequired},
+  authorName: {type: String, required: pathIsRequired},
+  authorId: {type: String, required: pathIsRequired, ref: 'User'},
   title: {type: String, required: pathIsRequired, unique: true},
   bodyText: {type: String, required: pathIsRequired}
 })

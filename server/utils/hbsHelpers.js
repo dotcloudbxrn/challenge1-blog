@@ -17,7 +17,7 @@ let truncTitle = function(str) {
 }
 
 let truncBody = function (str) {
-  let num = 150;
+  let num = 110;
   if(num < str.length) {
     var returnedStr = ''; 
     var trunc = Math.abs(num - str.length);  

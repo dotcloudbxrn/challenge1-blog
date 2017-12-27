@@ -304,6 +304,62 @@ PUBLISH - Post creation
 	margin: 10px;
 }
 
+/* 
+=====================
+Article -> Details
+====================
+*/
+
+.details-wrapper {
+	width: 700px;;
+	text-align: left;
+	padding: 20px;
+	margin: 10px;
+}
+
+.details-article-title {
+	color: #88d317;
+	font-size: 1.7em;
+}
+
+.details-article-author {
+	margin: 15px 0;
+	font-size: .9em;
+}
+
+.details-article-author > a {
+	height: 50px;
+	display: inline-block;
+	color: #bcae29;
+	text-decoration: none;
+	outline: none;
+	font-size: 1.1em;
+}
+
+.details-article-author > a:hover {
+	font-size: 1.3em;
+	color: #F7B733;
+}
+
+.details-article-body {
+	width: 100%;
+	word-wrap: break-word;
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+	border-top: 3px dashed #88d317;
+	margin: 10px;
+	color: #273e63;
+	padding: 15px;
+}
+
+.details-article-body::first-letter {
+	color: #f33920;
+	font-size: 1.5em;
+	padding-left: 20px;
+}
+
+
+
 /*
 ==========================	
 FOOTER -> Site Footer
@@ -417,7 +473,7 @@ Main User Proifle Layout
 	border: 6px solid #fff;
 	border-radius: 8px;
 	min-width: 95%;
-	min-height: 200px;
+	min-height: 140px;
 }
 
 .user-article {
@@ -539,7 +595,7 @@ Media query for grid layout
 		display: grid;
 		grid-template-columns: repeat(9, 1fr);
 		grid-template-areas: "u u u p p p p p p";
-		grid-template-rows: 1fr;
+		grid-template-rows: 150px;
 	}
 
 	body, nav, li {
@@ -578,6 +634,9 @@ Media query for grid layout
 		width: 80%;
 	}
 
+	.user-posts {
+		height: 60%;
+	}
 	.profile-picture {
 		width: 100%;
 	}
@@ -586,8 +645,10 @@ Media query for grid layout
 		width: 300px;
 	}
 
-	.user-article {
-		min-width: 150px;
-		max-width: 150px;
+	.article-body {
+		height: 60%;
 	}
+
+
+
 }

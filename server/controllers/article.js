@@ -11,13 +11,20 @@ module.exports = {
     let userId = res.locals.currentUser._id
     User.findById(userId).then((author) => {
       let articleId = new ObjectId()
-      article.author = author._id
+      article.authorName = author.username
+      article.authorId = author._id
       article._id = articleId
       author.articles.push(articleId)
       author.save()
       Article.create(article).then(() => {
         res.redirect('/')
       })
-    })  
+    })
+  },
+  detailsGet: (req, res) => {
+    let articleId = req.params.id
+    Article.findById(articleId).then((article) => {
+      res.render('article/details', article)
+    })
   }
 }
