@@ -73,8 +73,9 @@ Pallette
 */
 
 html, body {
+	min-width: 350px;
 	height: 100%;
-	width: 100%;
+	width: 100vw;
 	font-size: 100%;
 	box-sizing: border-box;
 	color: rgb(243, 57, 32);
@@ -100,9 +101,6 @@ body {
 	text-align: center;
 }
 
-/* TO-DO MOBILE RESOLUTION */
-
-
 /*
 ==========================
 HEADER -> Site Nav
@@ -121,13 +119,14 @@ body {
 }
 
 header {
+	min-width: 300px;
 	position: sticky;
 	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	grid-area: head;
-	padding: 15px 30px;
+	padding: 15px 20px;
 	color: #ff3b3f;
 	background: #233237;
 }
@@ -311,13 +310,15 @@ Article -> Details
 */
 
 .details-wrapper {
-	width: 90%;
+	width: 90vw;
 	text-align: left;
 	padding: 20px;
 	margin: 10px;
 }
 
 .details-article-title {
+	/* width: 90%; */
+	word-wrap: break-word;
 	color: #88d317;
 	font-size: 1.7em;
 }
@@ -588,6 +589,7 @@ Media query for grid layout
 */
 
 @media only screen and (max-width: 599px) {
+
 	.user-content {
 		display: grid;
 		grid-template-columns: repeat(9, 1fr);
@@ -646,4 +648,8 @@ Media query for grid layout
 		height: 60%;
 	}
 
+
+	.main-content {
+		width: 100%;
+	}
 }
