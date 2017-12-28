@@ -47,7 +47,6 @@ module.exports.seedAdminUser = () => {
         console.log(err)
         return
       }
-      console.log('User created:', admin);
     })
   })
 }

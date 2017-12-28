@@ -142,7 +142,7 @@ header {
 
 header a {
 	text-decoration: none;
-	color: #bcae29;
+	color: #F7B733;
 }
 
 header a:hover {
@@ -218,7 +218,7 @@ nav > ul > li:hover {
 
 .toggle {
 	text-decoration: none;
-	color: #bcae29;
+	color: #F7B733;
 	/* remove dotted line around active link */
 	outline: 0;
 }
@@ -311,7 +311,7 @@ Article -> Details
 */
 
 .details-wrapper {
-	width: 700px;;
+	width: 90%;
 	text-align: left;
 	padding: 20px;
 	margin: 10px;
@@ -330,7 +330,7 @@ Article -> Details
 .details-article-author > a {
 	height: 50px;
 	display: inline-block;
-	color: #bcae29;
+	color: #F7B733;
 	text-decoration: none;
 	outline: none;
 	font-size: 1.1em;
@@ -338,15 +338,12 @@ Article -> Details
 
 .details-article-author > a:hover {
 	font-size: 1.3em;
-	color: #F7B733;
 }
 
 .details-article-body {
-	width: 100%;
 	word-wrap: break-word;
-	text-overflow: ellipsis; 
-	white-space: nowrap;
 	border-top: 3px dashed #88d317;
+	border-bottom: 3px dashed #88d317;
 	margin: 10px;
 	color: #273e63;
 	padding: 15px;
@@ -648,7 +645,5 @@ Media query for grid layout
 	.article-body {
 		height: 60%;
 	}
-
-
 
 }
