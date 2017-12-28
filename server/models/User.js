@@ -8,7 +8,7 @@ let userSchema = new mongoose.Schema({
   firstName: { type: String, required: pathIsRequired},
   lastName: { type: String, required: pathIsRequired},
   avatar: { type: String, default: "/images/default-profile-pic.jpg"},
-  bio: { type: String },
+  bio: { type: String, default: "This user has not entered their bio yet." },
   salt: String,
   hashedPass: String,
   roles: [String],

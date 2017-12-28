@@ -562,7 +562,8 @@ abbr {
 	font-size: 90%;
 	word-spacing: 2px;
 	letter-spacing: 1px;
-	border: 10px double #f33920;
+	/* border: 8px dashed #f33920; */
+	color: #e86c20;
 }
 .profile-label {
 	color: #88d317;

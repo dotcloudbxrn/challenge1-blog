@@ -74,7 +74,16 @@ module.exports = {
     let id = req.params.id
     User.findById(id).then((user) => {
       if (!user) console.log('User not found')
-      res.render('user/profile', {user})
+      res.render('user/profile', {
+        user
+      })
+    })
+  },
+  editProfileGet: (req, res) => {
+    let id = req.params.id
+    User.findById(id).then((user) => {
+      if (!user) console.log('User not found')
+      res.render('user/edit-profile', {user})
     })
   }
 }

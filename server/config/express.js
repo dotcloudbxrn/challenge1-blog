@@ -13,11 +13,12 @@ module.exports = (app) => {
     defaultLayout: 'main',
     helpers: {
       truncTitle: hbsHelpers.truncTitle,
-      truncBody: hbsHelpers.truncBody
+      truncBody: hbsHelpers.truncBody,
+      possessive: hbsHelpers.possessive,
+      sameUser: hbsHelpers.sameUser
     }
   }))
 
-  // app.use(cookieParser())
   app.use(session({ secret: "superSecretStuff12345", resave: false, saveUninitialized: false }))
   app.use(passport.initialize())
   app.use(passport.session())

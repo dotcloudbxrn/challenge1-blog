@@ -12,4 +12,5 @@ module.exports = (app) => {
   app.get('/article/create', auth.isAuthenticated, controllers.article.createArticleGet)
   app.post('/article/create', auth.isAuthenticated, controllers.article.createArticlePost)
   app.get('/article/details/:id', controllers.article.detailsGet)
+  app.get('/user/edit-profile/:id', controllers.user.editProfileGet)
 }

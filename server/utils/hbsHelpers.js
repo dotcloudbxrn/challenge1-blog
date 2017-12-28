@@ -34,7 +34,27 @@ let truncBody = function (str) {
   }
 }
 
+let possessive = function (username) {
+  return username.charAt(username.length - 1) === 's' ? `${username}'` : `${username}'s`
+}
+
+let sameUser = function (userId, profileId, options) {
+  // block helper solution borrowed from this place. thank god for stack overflow
+  //https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
+  
+  if (userId && profileId) {
+    let firstId = userId.toString()
+    let secondId = profileId.toString()
+    if (firstId === secondId) {
+      return options.fn(this)
+    } 
+    return options.inverse(this)
+  }
+}
+
 module.exports = {
   truncTitle,
-  truncBody
+  truncBody,
+  possessive,
+  sameUser
 }

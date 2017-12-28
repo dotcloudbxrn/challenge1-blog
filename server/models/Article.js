@@ -47,7 +47,11 @@ module.exports.seedAdminPosts = () => {
           return
         }
         admin.articles.push(article._id)
-        admin.save().then(() => {
+        admin.save().then((user, err) => {
+          if (err) {
+            return err
+          }
+          // rejoice
         })
       })
     }) 
