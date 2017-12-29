@@ -416,6 +416,28 @@ input[type=submit]:hover {
 	background: rgb(255, 137, 40);
 }
 
+.comment-post {
+	border: 3px solid grey;
+	border-radius: 5px;
+	margin: 5px;
+	width: 80%;
+}
+
+.comment-author {
+	font-size: 20px;
+	text-align: left;
+	margin: 5px;
+	border-bottom: 1px dashed black;
+}
+
+.timestamp {
+	text-align: right;
+}
+
+.comment-body {
+	font-size: 22px;
+}
+
 /* 
 ========================
 Edit profile information
@@ -453,7 +475,7 @@ Edit profile information
 	height: 0;
 }
 
-.user-bio-input {
+.user-text-input {
 	padding: 3px;
 	height: 200px;
 	border: 5px solid #bebebe;	
@@ -462,6 +484,34 @@ Edit profile information
 	width: 90%;
 	border-radius: 15px;
 }
+
+#comment-text {
+	text-align: left;
+	margin-left: 50px;
+}
+
+.comment {
+	margin-left: 50px;
+	margin-bottom: 30px;
+	display: flex;
+	align-self: left;
+	width: 50%;
+	min-width: 50px;
+	height: 100px;
+}
+
+#comment-button {
+	position: relative;
+	top: -25px;
+	left: -35px;
+	width: 150px;
+	font-size: 18px;
+}
+
+
+
+
+
 
 /*
 ========================

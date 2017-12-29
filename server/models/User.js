@@ -13,7 +13,8 @@ let userSchema = new mongoose.Schema({
   salt: String,
   hashedPass: String,
   role: String,
-  articles: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Article'} ]
+  articles: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Article'} ],
+  comments: [ {type: String} ]
 })
 
 userSchema.method({

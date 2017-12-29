@@ -1,6 +1,13 @@
 const User = require('./../models/User')
 const Article = require('./../models/Article')
+const Comment = require('./../models/Comment')
 const {ObjectId} = require('mongoose').Types
+const moment = require('moment')
+
+whatsTheTime = () => {
+  return moment().format("DD/MM/YYYY@HH:MM")
+}
+
 
 module.exports = {
   createArticleGet: (req, res) => {
@@ -23,7 +30,8 @@ module.exports = {
   },
   detailsGet: (req, res) => {
     let articleId = req.params.id
-    Article.findById(articleId).then((article) => {
+    Article.findById(articleId).populate('comments').then((article) => {
+      console.log(article)
       res.render('article/details', article)
     })
   },
@@ -31,6 +39,32 @@ module.exports = {
     let id = req.params.id
     User.findById(id).populate('articles').then((user) => {
       res.render('article/list', {user})
+    })
+  },
+  addComment: (req, res) => {
+    let commentId = new ObjectId()
+    let id = req.params.userId
+    let articleId = req.params.articleId
+    User.findById(id).then((user) => {
+      user.comments.push(commentId)
+      user.save().then(
+        Article.findById(articleId).then((article) => {
+          article.comments.push(commentId)
+          article.save().then(
+            Comment.create({
+              _id: commentId,
+              authorName: user.username,
+              authorId: user._id,
+              commentBody: req.body.commentBody,
+              createdAt: whatsTheTime()
+            }).then((comment) => {
+              // I am aware that I should be doing this the other way around, 
+              // I will do it
+              res.redirect(`/article/details/${article._id}`)
+            })
+          )
+        })
+      )
     })
   }
 }

@@ -23,6 +23,7 @@ module.exports = (settings) => {
   require('./../models/User')
   let User = require('./../models/User')
   let Article = require('./../models/Article')
-
+  let Comment = require('./../models/Comment')
+  
   User.seedAdminUser()
 }

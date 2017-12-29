@@ -1,21 +1,9 @@
 const controllers = require('./../controllers/index')
 const auth = require('./auth')
 const multer = require('multer')
-const crypto = require('crypto')
-const mime = require('mime')
+let storage = require('./multerStorage')
 
-let storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    cb(null, 'public/images/profile-pictures/')
-  }, 
-  filename: function(req, file, cb) {
-    crypto.pseudoRandomBytes(16, function(err, raw) {
-      cb(null, raw.toString('hex') + Date.now() + '.' + mime.getExtension(file.mimetype))
-    })
-  }
-})
-
-let upload = multer({ storage })
+let upload = multer(storage )
 
 module.exports = (app) => {
   app.get('/', controllers.home.index)
@@ -30,5 +18,6 @@ module.exports = (app) => {
   app.get('/article/details/:id', controllers.article.detailsGet)
   app.get('/user/edit-profile/:id', auth.isAuthenticated, controllers.user.editProfileGet)
   app.post('/user/edit-profile/:id', auth.isAuthenticated, upload.single('avatar'), controllers.user.editProfilePost)
-  app.get('/article/list/:id', controllers.article.listArticles)
+  app.get('/article/list/:id', controllers.article.listArticles),
+  app.post('/article/postComment/:articleId/:userId', auth.isAuthenticated,controllers.article.addComment)
 }
