@@ -1,6 +1,23 @@
 // USING https://github.com/jquery/jquery-mousewheel
 
-if (!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
+function is_touch_device() {  
+  try {  
+    document.createEvent("TouchEvent");
+    return true; 
+  } catch (e) { 
+    return false;
+  }  
+}
+
+is_touch_device();
+
+if (is_touch_device())  {
+  alert('phone')
+  $(function() {
+    $('.user-posts').css('overflow', 'scroll')
+  })
+} else {
+  alert('desktop')
   $(function() {
     $('.user-posts').mousewheel(function(evt, chg) {
        this.scrollLeft -= (chg * 50); //need a value to speed up the change
