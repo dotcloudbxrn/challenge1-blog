@@ -25,5 +25,4 @@ module.exports = (settings) => {
   let Article = require('./../models/Article')
 
   User.seedAdminUser()
-  Article.seedAdminPosts()
 }

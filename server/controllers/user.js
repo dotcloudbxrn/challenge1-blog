@@ -74,9 +74,7 @@ module.exports = {
     let id = req.params.id
     User.findById(id).then((user) => {
       if (!user) console.log('User not found')
-      res.render('user/profile', {
-        user
-      })
+      res.render('user/profile', {user})
     })
   },
   editProfileGet: (req, res) => {
@@ -84,6 +82,19 @@ module.exports = {
     User.findById(id).then((user) => {
       if (!user) console.log('User not found')
       res.render('user/edit-profile', {user})
+    })
+  },
+  editProfilePost: (req, res) => {
+    let userId = req.params.id
+    let changedUser = req.body
+    User.findById(userId).then((user) => {
+      user.firstName = changedUser.firstName
+      user.lastName = changedUser.lastName
+      user.bio = changedUser.bio
+      user.avatar = `images/profile-pictures/${req.file.filename}`
+      user.save().then((success) => {
+        res.redirect(`/user/profile/${userId}`)
+      })
     })
   }
 }

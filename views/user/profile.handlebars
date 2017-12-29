@@ -1,9 +1,9 @@
 <div class="main-user-profile">
-  <p id="profile-pic"><img id="profile-pic-image" src="/images/default-profile-pic.jpg"></p>
+  <p id="profile-pic"><img id="profile-pic-image" src="/{{user.avatar}}"/></p>
   <div id="profile-descr">
-    {{#sameUser currentUser._id user._id}}
+    {{#isSameUser currentUser._id user._id}}
       <a href="/user/edit-profile/{{user._id}}">Edit your profile</a>
-    {{/sameUser}}
+    {{/isSameUser}}
     <p id=""><span class="profile-label">Username: </span> {{user.username}}</p>
     <p id="profile-name"><span class="profile-label">Name: </span> {{user.firstName}} {{user.lastName}}</p>
     <p><span class="profile-label">A short introduction: </span></p>

@@ -424,6 +424,53 @@ input[type=submit]:hover {
 	background: rgb(255, 137, 40);
 }
 
+/* 
+========================
+Edit profile information
+========================
+*/
+
+.user-profile-edit > * {
+	margin: 15px;
+}
+
+
+#edit-user-profile {
+	width: 90%;
+}
+
+#edit-profile-label {
+	font-size: 38px;
+}
+
+#upload-picture-label {
+	justify-self: center;
+	align-self: center;
+	display: block;
+	margin: 20px auto;
+	border: 5px solid #e86c20;
+	background: #fff;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 50%;
+}
+
+#update-profile-picture {
+	overflow: hidden;
+	width: 0;
+	height: 0;
+}
+
+.user-bio-input {
+	padding: 3px;
+	height: 200px;
+	border: 5px solid #bebebe;	
+	font-size: 24px;
+	font-family: Bungee;
+	width: 90%;
+	border-radius: 15px;
+}
+
 /*
 ========================
 Main User Proifle Layout
@@ -557,6 +604,16 @@ abbr {
 	margin: 10px;
 	/* border-bottom: 3px solid #273e63; */
 }
+#profile-descr > a {
+	color: #f33920;
+	outline: none;
+	font-style: italic;
+	text-decoration: none;
+}
+#profile-descr > a:hover {
+	text-decoration: underline;
+}
+
 
 #profile-bio {
 	font-size: 90%;

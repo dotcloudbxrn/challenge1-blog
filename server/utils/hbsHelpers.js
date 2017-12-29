@@ -38,7 +38,7 @@ let possessive = function (username) {
   return username.charAt(username.length - 1) === 's' ? `${username}'` : `${username}'s`
 }
 
-let sameUser = function (userId, profileId, options) {
+let isSameUser = function (userId, profileId, options) {
   // block helper solution borrowed from this place. thank god for stack overflow
   //https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
   
@@ -56,5 +56,5 @@ module.exports = {
   truncTitle,
   truncBody,
   possessive,
-  sameUser
+  isSameUser
 }
