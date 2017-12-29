@@ -26,5 +26,11 @@ module.exports = {
     Article.findById(articleId).then((article) => {
       res.render('article/details', article)
     })
+  },
+  listArticles: (req, res) => {
+    let id = req.params.id
+    User.findById(id).populate('articles').then((user) => {
+      res.render('article/list', {user})
+    })
   }
 }

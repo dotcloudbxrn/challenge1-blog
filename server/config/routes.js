@@ -30,4 +30,5 @@ module.exports = (app) => {
   app.get('/article/details/:id', controllers.article.detailsGet)
   app.get('/user/edit-profile/:id', auth.isAuthenticated, controllers.user.editProfileGet)
   app.post('/user/edit-profile/:id', auth.isAuthenticated, upload.single('avatar'), controllers.user.editProfilePost)
+  app.get('/article/list/:id', controllers.article.listArticles)
 }

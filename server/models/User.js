@@ -48,11 +48,8 @@ module.exports.seedAdminUser = () => {
         console.log(err)
         return
       }
-      console.log('created Admin user', admin)
       User.find({}).then((adminArr) => {
-        console.log(adminArr)
         let admin = adminArr[0]
-        console.log('admin after arr', admin)
         
         Article.create({
           _id: new ObjectId(),
@@ -70,14 +67,10 @@ module.exports.seedAdminUser = () => {
                     Thank you for reading.`
         }, (err, article) => {
           if (err) {
-            console.log('There was an error creating the admin post!')
             console.log(err)
             return
           }
-  
-          console.log('inner article-', article)
           admin.articles.push(article._id)
-          console.log('admin after push', admin)
           admin.save().then(() => {
 
           })

@@ -240,8 +240,6 @@ nav > ul > li:hover {
 #menu:target {
 	transform: translateX(340px);
 }
-
-
 /* the X icon */
 .close {
 	text-align: right;
@@ -251,9 +249,6 @@ nav > ul > li:hover {
 	top: 15px;
 	right: 15px;
 }
-
-
-
 /*
 ==========================
 ARTICLE -> Article Content (surrounds {{{BODY}}})
@@ -283,7 +278,6 @@ article {
 	min-width: 200px;
 	margin: 5px;
 }
-
 
 /* 
 =============================
@@ -355,8 +349,6 @@ Article -> Details
 	font-size: 1.5em;
 	padding-left: 20px;
 }
-
-
 
 /*
 ==========================	
@@ -567,7 +559,6 @@ abbr {
 
 
 /* PROFILE PAGE LAYOUT */
-
 .main-user-profile {
 	color: #233237;
 	text-align: center;
@@ -637,6 +628,9 @@ abbr {
 	color: #f33920;
 }
 
+.user-articles {
+	list-style: decimal;
+}
 
 
 
