@@ -14,7 +14,7 @@ let userSchema = new mongoose.Schema({
   hashedPass: String,
   role: String,
   articles: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Article'} ],
-  comments: [ {type: String} ]
+  comments: [ {type: String, ref: 'Comment'} ]
 })
 
 userSchema.method({

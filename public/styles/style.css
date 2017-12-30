@@ -119,6 +119,7 @@ body {
 }
 
 header {
+	z-index: 2;
 	min-width: 300px;
 	position: sticky;
 	top: 0;
@@ -178,6 +179,7 @@ Nav -> User Menu
 }
 
 nav {
+	z-index: 2;
 	grid-area: menu;
 	overflow: auto;
 	transition: all 1s;
@@ -416,26 +418,73 @@ input[type=submit]:hover {
 	background: rgb(255, 137, 40);
 }
 
+#comments-label {
+	font-size: 30px;
+	color: #6dafc0;
+}
+
+.comment-posts {
+	margin: 5px 55px;
+	width: 60%;
+}
+
+.comment-lookup-posts {
+	margin: 5px 55px;
+	width: 90%;
+}
+
 .comment-post {
-	border: 3px solid grey;
-	border-radius: 5px;
-	margin: 5px;
-	width: 80%;
+	margin: 25px 3px;
 }
 
 .comment-author {
-	font-size: 20px;
+	color: #e86c20;
+	font-size: 22px;
 	text-align: left;
 	margin: 5px;
-	border-bottom: 1px dashed black;
+	border-bottom: 1px dashed #e86c20;
+}
+
+.comment-author a {
+	display: inline-block;
+	color: #273e63;
+	text-decoration: none;
+}
+
+.comment-author a::first-letter {
+	color: #ee1c14;
 }
 
 .timestamp {
+	/* padding-left: 15px; */
 	text-align: right;
+	font-size: 18px;
 }
 
 .comment-body {
+	padding: 3px 5px;
 	font-size: 22px;
+	color: #3f75ca;
+}
+
+.comment-article {
+	font-style: italic;
+	font-size: 24px	;
+}
+
+.comment-article a {
+	color: rgb(120, 51, 247);
+	text-decoration: none;
+	font-size: 26px;
+}
+
+.comment-article a:hover {
+	color: #F7B733;
+	text-decoration: underline;
+}
+
+.comment-container {
+	margin: 5px;
 }
 
 /* 
@@ -501,6 +550,7 @@ Edit profile information
 }
 
 #comment-button {
+	z-index: 1;
 	position: relative;
 	top: -25px;
 	left: -35px;
@@ -540,6 +590,7 @@ Main User Proifle Layout
 	align-self: center;
 	margin: 5px auto;
 	height: 80%;
+	width: 200px;
 }
 
 .profile-picture {
@@ -678,10 +729,23 @@ abbr {
 	color: #f33920;
 }
 
+#article-listing {
+	margin: 20px auto;
+	font-size: 40px;
+}
+
 .user-articles {
 	list-style: decimal;
 }
 
+.user-articles li {
+	margin: 10px 3px;
+}
+
+.user-articles a {
+	text-decoration: none;
+	color: #F7B733;
+}
 
 
 /*
@@ -700,6 +764,7 @@ Media query for grid layout
 	}
 
 	body, nav, li {
+		z-index: 2;
 		text-align: center;
 		font-size: 18px;
 	}
@@ -732,14 +797,14 @@ Media query for grid layout
 
 	.user-profile {
 		grid-area: u;
-		width: 80%;
 	}
 
 	.user-posts {
 		height: 60%;
 	}
+
 	.profile-picture {
-		width: 100%;
+		min-width: 100px;
 	}
 
 	#publish-article {
@@ -750,8 +815,22 @@ Media query for grid layout
 		height: 60%;
 	}
 
-
 	.main-content {
 		width: 100%;
+	}
+
+	#comments-label {
+		font-size: 24px;		
+	}
+	.comment {
+		width: 70%;
+		font-size: 18px;
+	}	
+	.comment-posts {
+		width: 80%;
+	}
+	
+	.comment-body {
+		font-size: 20px;		
 	}
 }

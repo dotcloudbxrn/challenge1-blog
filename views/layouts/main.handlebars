@@ -25,10 +25,17 @@
 		<p id="menu-label">User Menu</p>
 		<ul>
 			<li><a href="/article/create">Create article</a></li>
-			<li>Your articles</li>
-			<li>Other users</li>
-			<li>Have lunch</li>
-			<li>Your comments</li>
+			{{#if currentUser}}
+				<li><a href="/article/list/{{currentUser._id}}">Your articles</a></li>
+			{{else}}
+				<li><a href="/user/login">Your articles</a></li>
+			{{/if}}
+				<li>Have lunch</li>
+			{{#if currentUser}}
+				<li><a href="/user/comments/{{currentUser._id}}">Your comments</a></li>
+			{{else}}
+				<li><a href="/user/login">Your comments</a></li>
+			{{/if}}
 			<li>Favourites</li>
 		</ul>
 	</nav>

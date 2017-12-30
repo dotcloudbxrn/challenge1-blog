@@ -2,19 +2,17 @@
   <h1 id="edit-profile-label"> Edit profile </h1>
   <form id="user-profile-form" action="/user/edit-profile/{{currentUser._id}}" method="post" enctype="multipart/form-data">
     <label for="first-name"> First name:
-      <input class="field" type="text" name="firstName" value="{{user.firstName}}"required><br>  
+      <input class="field" type="text" name="firstName" value="{{user.firstName}}"  required oninvalid="fieldValid(this)"><br>  
     </label><br>
     <label for="last-name"> Last name:
-      <input class="field" type="text" name="lastName" required value="{{user.lastName}}"><br>
+      <input class="field" type="text" name="lastName" value="{{user.lastName}}"  required oninvalid="fieldValid(this)"><br>
     </label><br>
     <p id="user-biography-label">Your biography:</p> 
-      <textarea class="user-text-input"
-                name="bio" id="user-biography-text" 
-                cols="30" 
-                rows="30" 
-                maxlength="1000"
-                {{!-- placeholder="Some text that you'd find appropriate to say on a first meeting" --}}
-                value="{{user.bio}}"></textarea>
+    <textarea class="user-text-input"
+              name="bio" id="user-biography-text"
+              maxlength="1000"
+              placeholder="Something you'd find appropriate to say on a first meeting."
+              required oninvalid="fieldValid(this)">{{#if user.bio}}{{user.bio}}{{/if}}</textarea>
     <label id="upload-picture-label" for="update-profile-picture">
       Click me to change your picture:</label>
       <input type="file" 

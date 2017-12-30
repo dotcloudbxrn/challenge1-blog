@@ -1,18 +1,22 @@
 <form class="form" action="/user/register" method="POST">
   <label for="username"> Choose your Username:<br>
-    <input class="field" type="text" name="username" required>
+    <input class="field" 
+    type="text" 
+    name="username" 
+    required
+    oninvalid="fieldValid(this)">
   </label>
   <label for="password"> Password goes here:<br>
-    <input class="field" type="password" name="password" required>
+    <input class="field" type="password" name="password" required oninvalid="fieldValid(this)">
   </label>
   <label for="confirm-password"> And here, once more:<br>
-    <input class="field" type="password" name="confirm" required>
+    <input class="field" type="password" name="confirm" required oninvalid="fieldValid(this)"> 
   </label>
   <label for="first-name"> First name:<br>
-    <input class="field" type="text" name="firstName" required>  
+    <input class="field" type="text" name="firstName" required oninvalid="fieldValid(this)">  
   </label>
   <label for="last-name"> Last name:<br>
-    <input class="field" type="text" name="lastName" required>
+    <input class="field" type="text" name="lastName" required oninvalid="fieldValid(this)">
   </label>
   <input type="submit" value="Register">
 </form>

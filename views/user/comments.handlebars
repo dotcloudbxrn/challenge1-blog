@@ -1,0 +1,10 @@
+<div class="comment-lookup-posts"><span id="comments-label">Comments:</span>
+  {{#each this.comments}}
+  <div class="comment-container">
+    <div class="comment-article">In: <a href="/article/details/{{this.articleId}}">{{this.articleName}}</a></div>
+    <div class="comment-body">"{{this.commentBody}}"</div>
+  </div>
+  {{else}}
+    <div>This user hasn't shared great thoughts yet</div>
+  {{/each}} 
+</div>

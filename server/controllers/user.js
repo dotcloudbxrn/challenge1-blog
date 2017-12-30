@@ -88,13 +88,32 @@ module.exports = {
     let userId = req.params.id
     let changedUser = req.body
     User.findById(userId).then((user) => {
-      user.firstName = changedUser.firstName
-      user.lastName = changedUser.lastName
-      user.bio = changedUser.bio
+    if(!user) {
+      res.redirect('/')
+      return 'No such user found'
+    }
+    if (req.file) {
       user.avatar = `images/profile-pictures/${req.file.filename}`
-      user.save().then((success) => {
-        res.redirect(`/user/profile/${userId}`)
-      })
+    }
+    if (changedUser.lastName.length < 1 || changedUser.firstName.length < 1 || changedUser.bio.length < 1) {
+      res.locals.globalError = "Invalid user input"
+      res.render('user/edit-profile', {user})
+      return
+    }
+    user.firstName = changedUser.firstName
+    user.lastName = changedUser.lastName
+    user.bio = changedUser.bio
+    user.save().then((success) => {
+      res.redirect(`/user/profile/${userId}`)
+    })
+  })
+  },
+  getComments: (req, res) => {
+    let id = req.params.id 
+    User.findById(id)
+      .populate('comments')
+      .then((user) => {
+        res.render('user/comments', user)
     })
   }
 }

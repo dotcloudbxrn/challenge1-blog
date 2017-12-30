@@ -1,8 +1,8 @@
-<h1>List of {{possessive user.username}} articles:</h1>
+<h1 id="article-listing">List of {{possessive user.username}} articles:</h1>
 <ol class="user-articles">
-{{#each user.articles}}
-  <li><a href="/article/details/{{this._id}}">{{this.title}}</a></li>
-{{else}}
-  <h2>This user has no articles yet!</h2>
-{{/each}}
+  {{#each user.articles}}
+    <li><a href="/article/details/{{this._id}}">{{this.title}}</a></li>
+  {{else}}
+    <h2>This user has no articles yet!</h2>
+  {{/each}}
 </ol>

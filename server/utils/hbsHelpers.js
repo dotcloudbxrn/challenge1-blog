@@ -52,6 +52,7 @@ let isSameUser = function (userId, profileId, options) {
   }
 }
 
+
 module.exports = {
   truncTitle,
   truncBody,

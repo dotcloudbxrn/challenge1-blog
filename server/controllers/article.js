@@ -4,11 +4,6 @@ const Comment = require('./../models/Comment')
 const {ObjectId} = require('mongoose').Types
 const moment = require('moment')
 
-whatsTheTime = () => {
-  return moment().format("DD/MM/YYYY@HH:MM")
-}
-
-
 module.exports = {
   createArticleGet: (req, res) => {
     res.render('article/create')
@@ -31,7 +26,6 @@ module.exports = {
   detailsGet: (req, res) => {
     let articleId = req.params.id
     Article.findById(articleId).populate('comments').then((article) => {
-      console.log(article)
       res.render('article/details', article)
     })
   },
@@ -45,6 +39,7 @@ module.exports = {
     let commentId = new ObjectId()
     let id = req.params.userId
     let articleId = req.params.articleId
+    let timeStamp = moment().valueOf()
     User.findById(id).then((user) => {
       user.comments.push(commentId)
       user.save().then(
@@ -55,8 +50,10 @@ module.exports = {
               _id: commentId,
               authorName: user.username,
               authorId: user._id,
+              articleId: article._id,
+              articleName: article.title,
               commentBody: req.body.commentBody,
-              createdAt: whatsTheTime()
+              createdAt: moment(timeStamp).format('DD/MM/YYYY h:mm a')
             }).then((comment) => {
               // I am aware that I should be doing this the other way around, 
               // I will do it

@@ -6,15 +6,17 @@
 {{#if currentUser}}
   <h4 id="comment-text">Add your comment</h4>
   <form action="/article/postComment/{{this._id}}/{{currentUser._id}}" method="post">
-    <textarea name="commentBody" class="user-text-input comment" cols="10" rows="10"></textarea>
-    <input id="comment-button" type="submit" value="Your 2¢">
+    <textarea id="commentBody" name="commentBody" class="user-text-input comment" cols="10" rows="10"></textarea>
+    <input id="comment-button" type="submit" class="commentButton" value="Your 2¢">
   </form>
 {{/if}}
-{{#each this.comments}}
-<div class="comment-post">
-  <div class="comment-author"><a href="/user/profile/{{this.authorId}}">{{this.authorName}} : <span class="timestamp">{{this.createdAt}}</span></a></div>
-  <div class="comment-body">{{this.commentBody}}</div>
+<div class="comment-posts"><span id="comments-label">Comments:</span>
+  {{#each this.comments}}
+  <div class="comment-post">
+    <div class="comment-author"><a href="/user/profile/{{this.authorId}}">{{this.authorName}}</a> : <span class="timestamp">{{this.createdAt}}</span></div>
+    <div class="comment-body">{{this.commentBody}}</div>
+  </div>
+  {{else}}
+    <div>This post has no comments yet</div>
+  {{/each}} 
 </div>
-{{else}}
-  <div>This post has no comments yet</div>
-{{/each}} 

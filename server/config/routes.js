@@ -20,4 +20,5 @@ module.exports = (app) => {
   app.post('/user/edit-profile/:id', auth.isAuthenticated, upload.single('avatar'), controllers.user.editProfilePost)
   app.get('/article/list/:id', controllers.article.listArticles),
   app.post('/article/postComment/:articleId/:userId', auth.isAuthenticated,controllers.article.addComment)
+  app.get('/user/comments/:id', controllers.user.getComments)
 }

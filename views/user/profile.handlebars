@@ -4,10 +4,11 @@
     {{#isSameUser currentUser._id user._id}}
       <a href="/user/edit-profile/{{user._id}}">Edit your profile</a>
     {{/isSameUser}}
-    <p id=""><span class="profile-label">Username: </span> {{user.username}}</p>
+    <p><span class="profile-label">Username: </span> {{user.username}}</p>
     <p id="profile-name"><span class="profile-label">Name: </span> {{user.firstName}} {{user.lastName}}</p>
     <p><span class="profile-label">A short introduction: </span></p>
     <p id="profile-bio"> {{user.bio}} </p>
     <p><span class="profile-label">{{possessive user.username}} articles: </span><a href="/article/list/{{user._id}}" id="profile-articles-link">Click!</span></p>
+    <p><span class="profile-label">{{possessive user.username}} comments: </span><a href="/user/comments/{{user._id}}" id="profile-articles-link">Click!</span></p>
   </div>
 </div>
