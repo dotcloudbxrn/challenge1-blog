@@ -1,3 +1,4 @@
 /node_modules
 .vscode
 server.log
+public/images/profile-pictures
