@@ -2,7 +2,7 @@
   {{#each this.comments}}
   <div class="comment-container">
     <div class="comment-article">In: <a href="/article/details/{{this.articleId}}">{{this.articleName}}</a></div>
-    <div class="comment-body">"{{this.commentBody}}"</div>
+    <div class="comment-body preview">"{{this.commentBody}}"</div>
   </div>
   {{else}}
     <div>This user hasn't shared great thoughts yet</div>

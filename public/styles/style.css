@@ -359,6 +359,7 @@ FOOTER -> Site Footer
 */
 
 footer {
+	clear: both;
 	grid-area: footer;
 	grid-column: span 12;
 	background: #a9a9a9;
@@ -423,19 +424,11 @@ input[type=submit]:hover {
 	color: #6dafc0;
 }
 
-.comment-posts {
-	margin: 5px 55px;
-	width: 60%;
-}
-
-.comment-lookup-posts {
-	margin: 5px 55px;
+#add-article-comment {
 	width: 90%;
+	margin: 15px auto;
 }
 
-.comment-post {
-	margin: 25px 3px;
-}
 
 .comment-author {
 	color: #e86c20;
@@ -462,20 +455,22 @@ input[type=submit]:hover {
 }
 
 .comment-body {
+	text-align: left;
 	padding: 3px 5px;
 	font-size: 22px;
 	color: #3f75ca;
 }
 
 .comment-article {
+	text-align: left;
 	font-style: italic;
-	font-size: 24px	;
+	font-size: 20px	;
 }
 
 .comment-article a {
 	color: #88d317;
 	text-decoration: none;
-	font-size: 26px;
+	font-size: 24px;
 }
 
 .comment-article a:hover {
@@ -483,9 +478,56 @@ input[type=submit]:hover {
 	text-decoration: underline;
 }
 
+.preview {
+	font-size: 1.3em;
+	margin-left: 5%;
+	margin-bottom: 35px;
+}
+
 .comment-container {
 	margin: 5px;
 }
+
+/* in LIst all comments */
+.comment-lookup-posts {
+	margin: 5px 55px;
+	width: 90%;
+}
+
+
+ .comment-posts {
+	margin: 5px auto;
+	width: 80%;
+	height: auto;
+	word-wrap: break-word;
+	
+} 
+
+.comment-wrapper {
+	margin: 10px 5px;
+	display: grid;
+	grid-template-columns: 100px 4fr;
+	grid-template-rows: 1fr auto;
+	width: 90%;
+}
+
+.comment-author-picture-wrapper {
+	margin: 10px;
+	max-width: 250px;
+	max-height: 250px;
+}
+
+.comment-author-pic {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.comment-post {
+	width: 80%;
+	margin: 5px 3px;
+}
+
+
 
 /* 
 ========================
@@ -526,12 +568,15 @@ Edit profile information
 
 .user-text-input {
 	padding: 3px;
-	height: 200px;
+	height: 250px;
 	border: 5px solid #bebebe;	
 	font-size: 24px;
 	font-family: Bungee;
-	width: 90%;
 	border-radius: 15px;
+}
+
+#commentBody {
+	width: 80%;
 }
 
 #comment-text {
@@ -540,10 +585,9 @@ Edit profile information
 }
 
 .comment {
-	margin-left: 50px;
-	margin-bottom: 30px;
 	display: flex;
 	align-self: left;
+	margin-bottom: 15px;
 	width: 50%;
 	min-width: 50px;
 	height: 100px;
@@ -551,11 +595,11 @@ Edit profile information
 
 #comment-button {
 	z-index: 1;
-	position: relative;
-	top: -25px;
-	left: -35px;
-	width: 150px;
+	width: 250px;
 	font-size: 18px;
+	display: flex;
+	justify-self: left;
+	margin-left: 5px;
 }
 
 
@@ -714,6 +758,7 @@ abbr {
 	/* border: 8px dashed #f33920; */
 	color: #e86c20;
 }
+
 .profile-label {
 	color: #88d317;
 }
@@ -820,6 +865,7 @@ Media query for grid layout
 	}
 
 	#comments-label {
+		display: block;
 		font-size: 24px;		
 	}
 	.comment {
@@ -831,6 +877,8 @@ Media query for grid layout
 	}
 	
 	.comment-body {
-		font-size: 20px;		
+		max-width: 100%;
+		word-wrap: break-word;
+		font-size: 16px;
 	}
 }

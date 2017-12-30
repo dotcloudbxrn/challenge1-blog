@@ -5,18 +5,27 @@
 </div>
 {{#if currentUser}}
   <h4 id="comment-text">Add your comment</h4>
-  <form action="/article/postComment/{{this._id}}/{{currentUser._id}}" method="post">
+  <form id="add-article-comment" action="/article/postComment/{{this._id}}/{{currentUser._id}}" method="post">
     <textarea id="commentBody" name="commentBody" class="user-text-input comment" cols="10" rows="10"></textarea>
     <input id="comment-button" type="submit" class="commentButton" value="Your 2¢">
-  </form>
+  </form><br>
 {{/if}}
 <div class="comment-posts"><span id="comments-label">Comments:</span>
   {{#each this.comments}}
-  <div class="comment-post">
-    <div class="comment-author"><a href="/user/profile/{{this.authorId}}">{{this.authorName}}</a> : <span class="timestamp">{{this.createdAt}}</span></div>
-    <div class="comment-body">{{this.commentBody}}</div>
+  <div class="comment-wrapper">
+    <div class="comment-author-picture-wrapper">
+      <img class="comment-author-pic" src="/{{this.authorAvatar}}"/>
+    </div>
+    <div class="comment-post">
+      <div class="comment-author">
+        <a href="/user/profile/{{this.authorId}}">{{this.authorName}}</a><br>
+        <span class="timestamp">{{this.createdAt}}</span>
+      </div>
+      <div class="comment-body">{{this.commentBody}}</div>
+    </div>
   </div>
   {{else}}
     <div>This post has no comments yet</div>
-  {{/each}} 
+  {{/each}}
 </div>
+<div class="clear-after"></div>

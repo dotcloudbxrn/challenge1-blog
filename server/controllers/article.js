@@ -25,7 +25,9 @@ module.exports = {
   },
   detailsGet: (req, res) => {
     let articleId = req.params.id
-    Article.findById(articleId).populate('comments').then((article) => {
+    Article.findById(articleId)
+      .populate('comments')
+      .then((article) => {
       res.render('article/details', article)
     })
   },
@@ -50,6 +52,7 @@ module.exports = {
               _id: commentId,
               authorName: user.username,
               authorId: user._id,
+              authorAvatar: user.avatar,
               articleId: article._id,
               articleName: article.title,
               commentBody: req.body.commentBody,
