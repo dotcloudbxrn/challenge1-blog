@@ -8,17 +8,14 @@
       <input class="field" type="text" name="lastName" value="{{user.lastName}}"  required oninvalid="fieldValid(this)"><br>
     </label><br>
     <p id="user-biography-label">Your biography:</p> 
-    <textarea class="user-text-input"
+    <textarea class="user-text-input edit-bio"
               name="bio" id="user-biography-text"
               maxlength="1000"
               placeholder="Something you'd find appropriate to say on a first meeting."
-              required oninvalid="fieldValid(this)">{{#if user.bio}}{{user.bio}}{{/if}}</textarea>
-    <label id="upload-picture-label" for="update-profile-picture">
-      Click me to change your picture:</label>
-      <input type="file" 
-      name="avatar"
-      id="update-profile-picture" 
-      accept="image/jpg,image/jpeg,image/png,image/gif"/> 
+              required oninvalid="fieldValid(this)">{{#if user.bio}}{{user.bio}}{{/if}}</textarea><br>
+    <label for="avatar"> Image URL
+      <input type="text" name="avatar" id="avatar">
+    </label>
     <input type="submit" value="Edit Profile"></input>
   </form>
 </div>

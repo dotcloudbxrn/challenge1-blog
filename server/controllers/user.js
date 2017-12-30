@@ -92,14 +92,17 @@ module.exports = {
       res.redirect('/')
       return 'No such user found'
     }
-    if (req.file) {
-      user.avatar = `images/profile-pictures/${req.file.filename}`
+
+    if (changedUser.avatar) {
+      user.avatar = changedUser.avatar
     }
+
     if (changedUser.lastName.length < 1 || changedUser.firstName.length < 1 || changedUser.bio.length < 1) {
       res.locals.globalError = "Invalid user input"
       res.render('user/edit-profile', {user})
       return
     }
+    
     user.firstName = changedUser.firstName
     user.lastName = changedUser.lastName
     user.bio = changedUser.bio

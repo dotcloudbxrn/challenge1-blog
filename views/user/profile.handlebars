@@ -1,5 +1,5 @@
 <div class="main-user-profile">
-  <p id="profile-pic"><img id="profile-pic-image" src="/{{user.avatar}}"/></p>
+  <p id="profile-pic"><img id="profile-pic-image" src="{{user.avatar}}"/></p>
   <div id="profile-descr">
     {{#isSameUser currentUser._id user._id}}
       <a href="/user/edit-profile/{{user._id}}">Edit your profile</a>
