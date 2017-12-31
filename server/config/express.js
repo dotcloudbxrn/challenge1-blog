@@ -14,7 +14,8 @@ module.exports = (app) => {
 			truncTitle: hbsHelpers.truncTitle,
 			truncBody: hbsHelpers.truncBody,
 			possessive: hbsHelpers.possessive,
-			isSameUser: hbsHelpers.isSameUser
+			isSameUser: hbsHelpers.isSameUser,
+			checkOwnership: hbsHelpers.checkOwnership
 		}
 	}))
 

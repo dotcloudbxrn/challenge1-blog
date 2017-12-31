@@ -191,13 +191,13 @@ nav > ul {
 	justify-content: center;
 	grid-gap: 20px;
 	margin-top: 20px;
-	color: #88d317;
+	color: #89d814d2;
 	letter-spacing: .8px;
 	font-size: 20px;
 }
 
 nav ul a {
-	color: #88d317;
+	color: #89d814d2;
 	text-decoration: none;
 	outline: none;
 }
@@ -315,7 +315,7 @@ Article -> Details
 .details-article-title {
 	/* width: 90%; */
 	word-wrap: break-word;
-	color: #88d317;
+	color: #89d814d2;
 	font-size: 1.7em;
 }
 
@@ -339,8 +339,8 @@ Article -> Details
 
 .details-article-body {
 	word-wrap: break-word;
-	border-top: 3px dashed #88d317;
-	border-bottom: 3px dashed #88d317;
+	border-top: 3px dashed #89d814d2;
+	border-bottom: 3px dashed #89d814d2;
 	margin: 10px;
 	color: #273e63;
 	padding: 15px;
@@ -400,7 +400,6 @@ input[class=field]:focus {
 	border: 5px solid #fff;
 }
 
-
 input[type=submit] {
 	font-family: Bungee;
 	font-size: 1.1em;
@@ -420,6 +419,8 @@ input[type=submit]:hover {
 }
 
 #comments-label {
+	display: block;
+	margin-top: 30px;
 	font-size: 30px;
 	color: #6dafc0;
 }
@@ -428,7 +429,6 @@ input[type=submit]:hover {
 	width: 90%;
 	margin: 15px auto;
 }
-
 
 .comment-author {
 	color: #e86c20;
@@ -468,7 +468,7 @@ input[type=submit]:hover {
 }
 
 .comment-article a {
-	color: #88d317;
+	color: #89d814d2;
 	text-decoration: none;
 	font-size: 24px;
 }
@@ -494,21 +494,21 @@ input[type=submit]:hover {
 	width: 90%;
 }
 
-
- .comment-posts {
-	margin: 5px auto;
+.comment-posts {
+	margin: 15px;
 	width: 80%;
 	height: auto;
 	word-wrap: break-word;
-	
 } 
 
 .comment-wrapper {
-	margin: 10px 5px;
+	margin: 20px 5px;
 	display: grid;
-	grid-template-columns: 100px 4fr;
+	grid-template-columns: 100px 90%;
+	word-break: break-all;
+	word-wrap: break-word;
 	grid-template-rows: 1fr auto;
-	width: 90%;
+	width: 95%;
 }
 
 .comment-author-picture-wrapper {
@@ -523,11 +523,9 @@ input[type=submit]:hover {
 }
 
 .comment-post {
-	width: 80%;
+	width: 100%;
 	margin: 5px 3px;
 }
-
-
 
 /* 
 ========================
@@ -589,8 +587,9 @@ Edit profile information
 }
 
 #comment-text {
+	margin-top: 45px;
 	text-align: left;
-	margin-left: 50px;
+	margin-left: 15px;
 }
 
 .comment {
@@ -611,10 +610,10 @@ Edit profile information
 	margin-left: 5px;
 }
 
-
-
-
-
+.comment-likes {
+	font-size: 18px;
+	float: right;
+}
 
 /*
 ========================
@@ -687,7 +686,7 @@ img[class="profile-picture"] {
 }
 
 .user-content a:hover {
-	color: #88d317;
+	color: #89d814d2;
 }
 
 .user-article-title {
@@ -773,7 +772,7 @@ abbr {
 }
 
 .profile-label {
-	color: #88d317;
+	color: #89d814d2;
 }
 
 #profile-articles-link {
@@ -838,7 +837,7 @@ Media query for grid layout
 
 	nav > ul {
 		margin: 5px auto;
-		color: #88d317;
+		color: #89d814d2;
 	}
 
 
@@ -890,6 +889,7 @@ Media query for grid layout
 	}
 	
 	.comment-body {
+		clear: both;
 		max-width: 100%;
 		word-wrap: break-word;
 		font-size: 16px;

@@ -41,15 +41,28 @@ let possessive = function (username) {
 let isSameUser = function (userId, profileId, options) {
 	// block helper solution borrowed from this place. thank god for stack overflow
 	//https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
+	// used in user/profile to determine whether we need to show the user the "edit profile" link
   
 	if (userId && profileId) {
 		let firstId = userId.toString()
 		let secondId = profileId.toString()
 		if (firstId === secondId) {
 			return options.fn(this)
-		} 
+		}
 		return options.inverse(this)
 	}
+}
+
+let checkOwnership = function (currentUser, owner, options) {
+	if(currentUser && owner) {
+		let firstId = currentUser.toString()
+		let secondId = owner.toString()
+		if (firstId === secondId) {
+			return options.fn(this)
+		}
+	}
+	return options.inverse(this)
+
 }
 
 
@@ -57,5 +70,6 @@ module.exports = {
 	truncTitle,
 	truncBody,
 	possessive,
-	isSameUser
+	isSameUser,
+	checkOwnership
 }
