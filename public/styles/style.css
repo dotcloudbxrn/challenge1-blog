@@ -81,7 +81,9 @@ html, body {
 	color: rgb(243, 57, 32);
 }
 
-
+* > a {
+	outline: none;
+}
 
 /*
 ==========================
@@ -199,8 +201,8 @@ nav > ul {
 nav ul a {
 	color: #89d814d2;
 	text-decoration: none;
-	outline: none;
 }
+
 nav ul a:hover {
 	color: #F7B733;
 }
@@ -220,8 +222,6 @@ nav > ul > li:hover {
 .toggle {
 	text-decoration: none;
 	color: #F7B733;
-	/* remove dotted line around active link */
-	outline: 0;
 }
 
 .toggle:hover {
@@ -328,7 +328,6 @@ Article -> Details
 	display: inline-block;
 	color: #F7B733;
 	text-decoration: none;
-	outline: none;
 	font-size: 1.1em;
 }
 
@@ -718,7 +717,6 @@ img[class="profile-picture"] {
 }
 
 .user-content a {
-	outline: none;
 	text-decoration: none;
 	color: #F7B733;
 }
@@ -792,7 +790,6 @@ abbr {
 }
 #profile-descr > a {
 	color: #f33920;
-	outline: none;
 	font-style: italic;
 	text-decoration: none;
 }
@@ -814,7 +811,6 @@ abbr {
 }
 
 #profile-articles-link {
-	outline: none;
 	text-decoration: none;
 	color: #233237;
 }
