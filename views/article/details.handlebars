@@ -3,12 +3,12 @@
   <p class="details-article-author">
     By: <a href="/user/profile/{{this.authorId}}">{{this.authorName}}</a>
     {{#checkOwnership currentUser._id this.authorId }}
-      <div>
-        <form action="/article/edit/:id" class="edit" method="post">
-			    <input type="submit" value="Edit Post">
+      <div class="action-buttons-holder">
+        <form action="/article/edit/{{this._id}}" class="control" method="post">
+			    <input id="edit" type="submit" value="Edit">
 		    </form>
-		    <form action="/article/delete/:id" class="delete" method="post">
-			    <input type="submit" value="Delete Post">
+		    <form action="/article/delete/{{this._id}}" class="control" method="post">
+			    <input id="delete" type="submit" value="Delete">
 		    </form>
 	    </div>
     {{/checkOwnership}}

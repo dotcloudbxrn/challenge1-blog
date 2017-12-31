@@ -306,7 +306,6 @@ Article -> Details
 */
 
 .details-wrapper {
-	width: 90vw;
 	text-align: left;
 	padding: 20px;
 	margin: 10px;
@@ -325,7 +324,7 @@ Article -> Details
 }
 
 .details-article-author > a {
-	height: 50px;
+	height: 30px;
 	display: inline-block;
 	color: #F7B733;
 	text-decoration: none;
@@ -457,7 +456,7 @@ input[type=submit]:hover {
 .comment-body {
 	text-align: left;
 	padding: 3px 5px;
-	font-size: 22px;
+	font-size: 24px;
 	color: #3f75ca;
 }
 
@@ -527,6 +526,45 @@ input[type=submit]:hover {
 	margin: 5px 3px;
 }
 
+.action-buttons-holder {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.control {
+	height: 50px;
+	width: 100px;
+	margin: 10px;
+}
+
+#edit {
+	font-size: 18px;
+	width: 100%;
+	background: #7dafff;
+	color: #fff;
+	height: 100%;
+	transition: .4s all;
+}
+
+#edit:hover {
+	background: #F7B733;
+	color: #233237;
+}
+
+#delete {
+	font-size: 18px;
+	width: 100%;
+	height: 100%;
+	background: #161c13;
+	color: #ee1c14;
+	transition: .4s all;
+}
+
+#delete:hover {
+	background: #F7B733;
+	color: #000;
+}
 /* 
 ========================
 Edit profile information
@@ -887,10 +925,14 @@ Media query for grid layout
 	.comment-posts {
 		width: 80%;
 	}
+
+	.comment-post {
+		width: 80%;
+	}
 	
 	.comment-body {
 		clear: both;
-		max-width: 100%;
+		max-width: 90%;
 		word-wrap: break-word;
 		font-size: 16px;
 	}
@@ -900,5 +942,22 @@ Media query for grid layout
 	}
 	.profile-picture {
 		width: 100%;
+	}
+
+	.control {
+		margin: -10px;
+		margin-right: 0px;
+	}
+
+	#edit {
+		width: 80%;
+		height: 80%;
+		font-size: 80%;
+	}
+
+	#delete {
+		width: 80%;
+		height: 80%;
+		font-size: 80%;
 	}
 }
