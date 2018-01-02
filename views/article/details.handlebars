@@ -4,10 +4,10 @@
     By: <a href="/user/profile/{{this.authorId}}">{{this.authorName}}</a>
     {{#checkOwnership currentUser._id this.authorId }}
       <div class="action-buttons-holder">
-        <form action="/article/edit/{{this._id}}" class="control" method="post">
+        <form action="/article/edit/{{this._id}}" class="control" method="get">
 			    <input id="edit" type="submit" value="Edit">
 		    </form>
-		    <form action="/article/delete/{{this._id}}" class="control" method="post">
+		    <form action="/article/delete/{{this._id}}" class="control" method="get">
 			    <input id="delete" type="submit" value="Delete">
 		    </form>
 	    </div>

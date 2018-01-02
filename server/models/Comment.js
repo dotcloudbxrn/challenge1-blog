@@ -1,54 +1,38 @@
-const mongoose = require("mongoose")
-const pathIsRequired = "{PATH} is required."
-const User = require("./User")
+const mongoose = require('mongoose')
+const pathIsRequired = '{PATH} is required.'
+const User = require('./User')
+const findAllOf = require('./../utils/findAllOf')
 
 let commentSchema = new mongoose.Schema({
 	authorName: {type: String, required: pathIsRequired},
-	authorId: {type: String,  required: pathIsRequired, ref: "User"},
+	authorId: {type: mongoose.Schema.Types.ObjectId,  required: pathIsRequired, ref: 'User'},
 	authorAvatar: {type: String, required: pathIsRequired},
-	articleId: {type: String, required: pathIsRequired, ref: "Article"},
+	articleId: {type: String, required: pathIsRequired, ref: 'Article'},
 	articleName: {type: String, required: pathIsRequired},
 	commentBody: {type: String,  required: pathIsRequired},
 	commentLikes: {type: Number, default: 0},
 	createdAt: {type: String}
 })
 
-let Comment = mongoose.model("Comment", commentSchema)
+let Comment = mongoose.model('Comment', commentSchema)
 
 module.exports = Comment
+
 module.exports.addCommentUsers = (articleComments) => {
 	return new Promise (
 		function(resolve, reject) {
 			if(articleComments.length < 1) {
-				reject("No comments")
+				reject('No comments')
 			}
 		
-			function findAuthors (arr) {
-				let prop = "authorId"
-				let obj = {}
-				let nested = []
-
-				for (var i in arr) {
-					if(obj[arr[i][prop]] == undefined) {
-						nested.push(arr[i])
-						obj[arr[i][prop]] = "init"
-					}
-				}
-    
-				let final = []
-				for(let i in nested) {
-					let obj = {}
-					obj.authorId = nested[i].authorId
-					final.push(obj)
-				}
-				return final
-			}
-
 			// get all commenters as objects in array
-			let arr = findAuthors(articleComments)
-
+			let arr = findAllOf(articleComments, 'authorId')
+			if(!arr) {
+				reject(arr)
+			}
 			// find all commenters and take their avatars
 			User.find({ $or: arr }).exec().then((users) => {
+
 				let exp = []
 				for(let i in users) {
 					let ref = {
@@ -58,6 +42,31 @@ module.exports.addCommentUsers = (articleComments) => {
 					exp.push(ref)
 				}
 				resolve(exp)
+			})
+		})
+}
+
+
+
+filterComments = (userComments, allComments) => {
+	let arr = userComments.filter(function (e) {
+		return allComments.indexOf(e) < 0
+	})
+
+	return arr
+}
+
+
+module.exports.removeComments = (commentObjects, articleComments) => {
+	return new Promise(
+		function(resolve, reject) {
+			let commentAuthors = findAllOf(commentObjects, 'authorId')
+			User.find({ $or: commentAuthors }).exec().then((users) => {
+				for (i = 0, j = users.length; i < j; i++) {
+					users[i].comments = filterComments(users[i].comments, articleComments)
+					users[i].save()
+				}
+				resolve()
 			})
 		})
 }

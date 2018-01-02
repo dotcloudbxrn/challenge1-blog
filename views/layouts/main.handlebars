@@ -43,6 +43,9 @@
 		{{#if globalError}}
 			<h3 class="notif">{{globalError}}</h3>
 		{{/if}}
+		{{#if this.success}}
+			<h3 class="notif">{{this.success}}</h3>
+		{{/if}}
     {{{ body }}}
   </article>
 	<footer  id="footer"></footer>

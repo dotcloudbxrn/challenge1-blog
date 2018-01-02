@@ -273,7 +273,7 @@ article {
 	border: 5px solid #bebebe;
 	margin: 15px;
 	width: 90%;
-	height: 600px;
+	height: 450px;
 }
 
 .user-article {
@@ -538,6 +538,7 @@ input[type=submit]:hover {
 }
 
 #edit {
+	cursor: pointer;
 	font-size: 18px;
 	width: 100%;
 	background: #7dafff;
@@ -552,6 +553,7 @@ input[type=submit]:hover {
 }
 
 #delete {
+	cursor: pointer;
 	font-size: 18px;
 	width: 100%;
 	height: 100%;
@@ -639,6 +641,7 @@ Edit profile information
 }
 
 #comment-button {
+	cursor: pointer;
 	z-index: 1;
 	width: 250px;
 	font-size: 18px;

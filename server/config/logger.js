@@ -1,4 +1,4 @@
-const fs = require("fs")
+const fs = require('fs')
 
 module.exports = (app) => {
 	// Create a logger, the easy way
@@ -6,7 +6,7 @@ module.exports = (app) => {
 		var now = new Date().toString()
 		var log = `${now}: ${req.method} ${req.url}`
 
-		fs.appendFile("server.log", log + "\n", (err) => {
+		fs.appendFile('server.log', log + '\n', (err) => {
 			if(err) {
 				return err
 			}

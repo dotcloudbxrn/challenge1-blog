@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 module.exports = (settings) => {
@@ -8,20 +8,20 @@ module.exports = (settings) => {
 
 	let db = mongoose.connection
 
-	db.once("open", (err) => {
+	db.once('open', (err) => {
 		if (err) {
 			throw err
 		}
 
-		console.log("Successfully connected to MongoDB")
+		console.log('Successfully connected to MongoDB')
 	})
 
-	db.on("error", (err) => {
+	db.on('error', (err) => {
 		throw err
 	})
 
-	require("./../models/User")
-	let User = require("./../models/User")
+	require('./../models/User')
+	let User = require('./../models/User')
 
   
 	User.seedAdminUser()

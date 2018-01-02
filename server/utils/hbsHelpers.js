@@ -1,13 +1,13 @@
 let truncTitle = function(str) {
 	let num = 14
 	if(num < str.length) {
-		var returnedStr = "" 
+		var returnedStr = '' 
 		var trunc = Math.abs(num - str.length)  
 		var result = str.length - trunc
 		if (result <= 3) {
-			returnedStr = (str.substring(0, result) + "...")
+			returnedStr = (str.substring(0, result) + '...')
 		} else {
-			returnedStr = (str.substring(0, result-3) + "...")
+			returnedStr = (str.substring(0, result-3) + '...')
 		}
   
 		return returnedStr
@@ -19,13 +19,13 @@ let truncTitle = function(str) {
 let truncBody = function (str) {
 	let num = 110
 	if(num < str.length) {
-		var returnedStr = "" 
+		var returnedStr = '' 
 		var trunc = Math.abs(num - str.length)  
 		var result = str.length - trunc
 		if (result <= 3) {
-			returnedStr = (str.substring(0, result) + "...")
+			returnedStr = (str.substring(0, result) + '...')
 		} else {
-			returnedStr = (str.substring(0, result-3) + "...")
+			returnedStr = (str.substring(0, result-3) + '...')
 		}
   
 		return returnedStr
@@ -35,7 +35,7 @@ let truncBody = function (str) {
 }
 
 let possessive = function (username) {
-	return username.charAt(username.length - 1) === "s" ? `${username}'` : `${username}'s`
+	return username.charAt(username.length - 1) === 's' ? `${username}'` : `${username}'s`
 }
 
 let isSameUser = function (userId, profileId, options) {
