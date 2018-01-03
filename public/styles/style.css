@@ -111,7 +111,7 @@ HEADER -> Site Nav
 
 /* User notification message */
 .notif {
-	margin-top: 15px;
+	margin: 15px;
 	text-align: center;
 }
 
@@ -194,7 +194,7 @@ nav > ul {
 	grid-gap: 20px;
 	margin-top: 20px;
 	color: #89d814d2;
-	letter-spacing: .8px;
+	letter-spacing: .5px;
 	font-size: 20px;
 }
 
@@ -455,7 +455,7 @@ input[type=submit]:hover {
 .comment-body {
 	text-align: left;
 	padding: 3px 5px;
-	font-size: 24px;
+	font-size: 28px;
 	color: #3f75ca;
 }
 
@@ -477,6 +477,7 @@ input[type=submit]:hover {
 }
 
 .preview {
+	word-break: break-all;
 	font-size: 1.3em;
 	margin-left: 5%;
 	margin-bottom: 35px;
@@ -488,7 +489,9 @@ input[type=submit]:hover {
 
 /* in LIst all comments */
 .comment-lookup-posts {
-	margin: 5px 55px;
+	text-align: left;
+	padding-left: 15px;
+	margin: 5px auto;
 	width: 90%;
 }
 
@@ -655,6 +658,35 @@ Edit profile information
 	float: right;
 }
 
+
+.like-control {
+	font-size: .6em;
+	float: right;	
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	 -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+					user-select: none; /* Non-prefixed version, currently
+																supported by Chrome and Opera */
+}
+
+.like-control:hover {
+	cursor: pointer;
+}
+
+.like {
+	color: #3eb60e;
+}
+#tbd {
+	color: #6dafc0;
+	display: inline-block;
+	letter-spacing: .3px;
+	word-spacing: .5px;
+	font-size: 14px;
+	font-style: italic;
+	word-break: initial;
+}
 /*
 ========================
 Main User Proifle Layout
@@ -870,6 +902,7 @@ Media query for grid layout
 
 	#menu {
 		width: 50%;
+		min-width: 50%;
 	}
 
 	nav > ul {
@@ -877,6 +910,11 @@ Media query for grid layout
 		color: #89d814d2;
 	}
 
+	nav > ul > li {
+		padding-left: 5px;
+		padding-right: 5px;
+		word-wrap: break-word;	
+	}
 
 	#menu-label {
 		margin-top: 25px;
@@ -915,7 +953,7 @@ Media query for grid layout
 
 	#comments-label {
 		display: block;
-		font-size: 24px;		
+		font-size: 24px;
 	}
 	.comment {
 		width: 70%;
@@ -933,7 +971,7 @@ Media query for grid layout
 		clear: both;
 		max-width: 90%;
 		word-wrap: break-word;
-		font-size: 16px;
+		font-size: 14px;
 	}
 
 	.user-profile-picture {

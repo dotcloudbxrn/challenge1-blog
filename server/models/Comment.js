@@ -10,7 +10,7 @@ let commentSchema = new mongoose.Schema({
 	articleId: {type: String, required: pathIsRequired, ref: 'Article'},
 	articleName: {type: String, required: pathIsRequired},
 	commentBody: {type: String,  required: pathIsRequired},
-	commentLikes: {type: Number, default: 0},
+	commentLikes: {type: Number, default: 0, max: 5000, min: -5000},
 	createdAt: {type: String}
 })
 

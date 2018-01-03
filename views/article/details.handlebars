@@ -16,6 +16,9 @@
   <div class="details-article-body">{{this.bodyText}}</div>
 </div>
 <div class="comment-posts"><span id="comments-label">Comments:</span>
+        {{#if ../currentUser}}
+          <span id="tbd">CURRENTLY, OUR SYSTEM'S "LIKE" FUNCTIONALITY IS NOT WORKING, WE ASK OUR USERS TO USE IT RESPONSIBLY!</span>
+        {{/if}} 
   {{#each this.comments}}
   <div class="comment-wrapper">
     <div class="comment-author-picture-wrapper">
@@ -24,9 +27,14 @@
     <div class="comment-post">
       <div class="comment-author">
         <a href="/user/profile/{{this.authorId}}">{{this.authorName}}</a><br>
-        <span class="timestamp">{{this.createdAt}}</span><span class="comment-likes">Likes: {{this.commentLikes}}</span>
+          <span class="timestamp">{{this.createdAt}}</span>
+          <span class="comment-likes">Likes: <span class="likeCount">{{this.commentLikes}}</span></span>
       </div>
       <div class="comment-body">{{this.commentBody}}</div>
+        <span class="like-control">
+          <span class="like" id="{{this._id}}">Like</span>
+          <span class="dislike" id="{{this._id}}">Dislike</span>
+        </span>
     </div>
   </div>
   {{else}}
@@ -41,3 +49,5 @@
   {{/if}}
 </div>
 <div class="clear-after"></div>
+
+<!-- inside of an each, to access parent dir you use ../currentUser -->

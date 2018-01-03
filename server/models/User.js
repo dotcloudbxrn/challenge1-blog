@@ -13,7 +13,8 @@ let userSchema = new mongoose.Schema({
 	hashedPass: String,
 	role: String,
 	articles: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Article'} ],
-	comments: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Comment'} ]
+	comments: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Comment'} ],
+	likes: [ {type: mongoose.Schema.Types.ObjectId} ]
 })
 
 userSchema.method({

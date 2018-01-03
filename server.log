@@ -26,3 +26,15 @@ Mon Jan 01 2018 22:36:19 GMT+0100 (CET): GET /qwewqe
 Mon Jan 01 2018 22:36:19 GMT+0100 (CET): GET /qwewqe
 Mon Jan 01 2018 22:36:24 GMT+0100 (CET): GET /qwewqe
 Tue Jan 02 2018 09:33:09 GMT+0100 (CET): GET /favicon.ico
+Wed Jan 03 2018 09:44:44 GMT+0100 (CET): GET /comment/dislike/5a4bc483eda53b7755a47aec
+Wed Jan 03 2018 09:44:46 GMT+0100 (CET): GET /comment/like/5a4bc483eda53b7755a47aec
+Wed Jan 03 2018 09:44:48 GMT+0100 (CET): GET /comment/like/5a4bce96eda53b7755a47aed
+Wed Jan 03 2018 09:44:51 GMT+0100 (CET): GET /comment/like/5a4bc483eda53b7755a47aec
+Wed Jan 03 2018 09:44:53 GMT+0100 (CET): GET /comment/like/5a4bce96eda53b7755a47aed
+Wed Jan 03 2018 09:44:55 GMT+0100 (CET): GET /comment/like/5a4bce9ceda53b7755a47aee
+Wed Jan 03 2018 09:44:57 GMT+0100 (CET): GET /comment/like/5a4bcea5eda53b7755a47aef
+Wed Jan 03 2018 09:44:59 GMT+0100 (CET): GET /comment/like/5a4bced7eda53b7755a47af2
+Wed Jan 03 2018 09:45:00 GMT+0100 (CET): GET /comment/dislike/5a4bced7eda53b7755a47af2
+Wed Jan 03 2018 09:45:14 GMT+0100 (CET): GET /comment/like/5a4bc483eda53b7755a47aec
+Wed Jan 03 2018 14:13:33 GMT+0100 (CET): POST /comment/dislike
+Wed Jan 03 2018 14:13:34 GMT+0100 (CET): POST /comment/dislike

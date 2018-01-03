@@ -96,6 +96,7 @@ module.exports = {
 			if (changedUser.avatar) {
 				user.avatar = changedUser.avatar
 			}
+		
 
 			if (changedUser.lastName.length < 1 || changedUser.firstName.length < 1 || changedUser.bio.length < 1) {
 				res.locals.globalError = 'Invalid user input'

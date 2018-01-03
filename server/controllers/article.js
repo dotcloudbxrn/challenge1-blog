@@ -111,7 +111,6 @@ module.exports = {
 		Article.findById(articleId).then((article) => {
 			Comment.find({ '_id' : { $in: article.comments}}).exec().then((commentObjects) => {
 				if (commentObjects.length < 1) {
-					// napravi go tuk sushto
 					Article.removeFromUserList(article.authorId, article._id).then(
 						Article.findByIdAndRemove(articleId).then(() => {
 							res.redirect(`/?success=${encodeURIComponent('Post B-Gone!')}`)
@@ -130,5 +129,40 @@ module.exports = {
 				}
 			})
 		})
+	},
+	sendUser: (req, res) => {
+		if(!req.user) {
+			res.json({})
+		} else {
+			res.json({
+				userId: req.user._id
+			})
+		}
+	},
+	likeComment: (req, res) => {
+		if(!(req.body.userId && req.body.commentId)) {
+			return
+		} else {
+			Comment.findById(req.body.commentId).then((comment) => {
+				comment.commentLikes += 1
+				comment.save().then((comment) => {
+					res.send({res: comment.commentLikes})
+					return
+				})
+			})
+		}
+	},
+	dislikeComment: (req, res) => {
+		if(!(req.body.userId && req.body.commentId)) {
+			return
+		} else {
+			Comment.findById(req.body.commentId).then((comment) => {
+				comment.commentLikes -= 1
+				comment.save().then((comment) => {
+					res.send({res: comment.commentLikes})
+					return
+				})
+			})
+		}
 	}
 }
