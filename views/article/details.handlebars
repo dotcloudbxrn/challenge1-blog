@@ -16,37 +16,37 @@
   <div class="details-article-body">{{this.bodyText}}</div>
 </div>
 <div class="comment-posts"><span id="comments-label">Comments:</span>
-        {{#if ../currentUser}}
-          <span id="tbd">CURRENTLY, OUR SYSTEM'S "LIKE" FUNCTIONALITY IS NOT WORKING, WE ASK OUR USERS TO USE IT RESPONSIBLY!</span>
-        {{/if}} 
-  {{#each this.comments}}
-  <div class="comment-wrapper">
-    <div class="comment-author-picture-wrapper">
-      <img class="comment-author-pic" src="{{this.authorAvatar}}"/>
-    </div>
-    <div class="comment-post">
-      <div class="comment-author">
-        <a href="/user/profile/{{this.authorId}}">{{this.authorName}}</a><br>
-          <span class="timestamp">{{this.createdAt}}</span>
-          <span class="comment-likes">Likes: <span class="likeCount">{{this.commentLikes}}</span></span>
-      </div>
-      <div class="comment-body">{{this.commentBody}}</div>
-        <span class="like-control">
-          <span class="like" id="{{this._id}}">Like</span>
-          <span class="dislike" id="{{this._id}}">Dislike</span>
-        </span>
-    </div>
+{{#if currentUser}}
+  <span id="tbd">CURRENTLY, OUR SYSTEM'S "LIKE" functionality is working horribly wrong, please wait while we fix it</span>
+{{/if}} 
+{{#each this.comments}}
+<div class="comment-wrapper">
+  <div class="comment-author-picture-wrapper">
+    <img class="comment-author-pic" src="{{this.authorAvatar}}"/>
   </div>
-  {{else}}
-    <div>This post has no comments yet</div>
-  {{/each}}
-  {{#if currentUser}}
-    <h4 id="comment-text">Add your comment</h4>
-    <form id="add-article-comment" action="/article/postComment/{{this._id}}/{{currentUser._id}}" method="post">
-      <textarea id="commentBody" name="commentBody" class="user-text-input comment" cols="10" rows="10"></textarea>
-      <input id="comment-button" type="submit" class="commentButton" value="Your 2¢">
-    </form><br>
-  {{/if}}
+  <div class="comment-post">
+    <div class="comment-author">
+      <a href="/user/profile/{{this.authorId}}">{{this.authorName}}</a><br>
+        <span class="timestamp">{{this.createdAt}}</span>
+        <span class="comment-likes">Likes: <span class="likeCount">{{this.commentLikes}}</span></span>
+    </div>
+    <div class="comment-body">{{this.commentBody}}</div>
+      <span class="like-control">
+        <span class="like" id="{{this._id}}">Like</span>
+        <span class="dislike" id="{{this._id}}">Dislike</span>
+      </span>
+  </div>
+</div>
+{{else}}
+  <div>This post has no comments yet</div>
+{{/each}}
+{{#if currentUser}}
+  <h4 id="comment-text">Add your comment</h4>
+  <form id="add-article-comment" action="/article/postComment/{{this._id}}/{{currentUser._id}}" method="post">
+    <textarea id="commentBody" name="commentBody" class="user-text-input comment" cols="10" rows="10"></textarea>
+    <input id="comment-button" type="submit" class="commentButton" value="Your 2¢">
+  </form><br>
+{{/if}}
 </div>
 <div class="clear-after"></div>
 

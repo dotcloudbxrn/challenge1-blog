@@ -27,5 +27,5 @@ module.exports = (app) => {
 	app.post('/article/delete/:id', auth.isAuthenticated, controllers.article.deletePost)
 	app.get('/check/user', controllers.article.sendUser)
 	app.post('/comment/like', controllers.article.likeComment)
-	app.post('/comment/dislike', controllers.article.dislikeComment)
+	app.post('/comment/dislike', auth.isAuthenticated, controllers.article.dislikeComment)
 }

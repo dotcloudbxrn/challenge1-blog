@@ -132,7 +132,7 @@ module.exports = {
 	},
 	sendUser: (req, res) => {
 		if(!req.user) {
-			res.json({})
+			res.end()
 		} else {
 			res.json({
 				userId: req.user._id

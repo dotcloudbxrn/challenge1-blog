@@ -11,8 +11,8 @@ $(function () {
 					return response
 				},
 				//fail case
-				function() {
-					return $.Deferred().reject()
+				function(response) {
+					return $.Deferred().reject(response)
 				}
 			)
 		
@@ -26,11 +26,10 @@ $(function () {
 							return response
 						}, 
 						//fail case
-						function() {
-							return $.Deferred().reject()
+						function(response) {
+							return $.Deferred().reject(response)
 						}
 					)
-
 				
 				addLike
 					.done(function(commentData) {
