@@ -145,11 +145,16 @@ header {
 header a {
 	text-decoration: none;
 	color: #F7B733;
+	display:inline-block;
 }
 
 header a:hover {
 	color: #F7B733;
 }
+header a:hover:first-letter {
+	color: #ee1c14;
+}
+
 
 
 header > div {
@@ -164,6 +169,7 @@ header > div:hover {
 header > div:nth-child(3) {
 	margin-left: auto;
 }
+
 
 
 /*
@@ -339,6 +345,8 @@ Article -> Details
 	word-wrap: break-word;
 	border-top: 3px dashed #89d814d2;
 	border-bottom: 3px dashed #89d814d2;
+	background-color: #dadee6;
+	border-radius: 5px;
 	margin: 10px;
 	color: #273e63;
 	padding: 15px;
@@ -449,13 +457,13 @@ input[type=submit]:hover {
 .timestamp {
 	/* padding-left: 15px; */
 	text-align: right;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .comment-body {
 	text-align: left;
 	padding: 3px 5px;
-	font-size: 28px;
+	font-size: 24px;
 	color: #3f75ca;
 }
 
@@ -496,7 +504,7 @@ input[type=submit]:hover {
 }
 
 .comment-posts {
-	margin: 15px;
+	margin: 15px auto;
 	width: 80%;
 	height: auto;
 	word-wrap: break-word;
@@ -521,6 +529,7 @@ input[type=submit]:hover {
 .comment-author-pic {
 	max-width: 100%;
 	max-height: 100%;
+	border-radius: 3px;
 }
 
 .comment-post {
@@ -629,6 +638,7 @@ Edit profile information
 }
 
 #comment-text {
+	font-size: 20px;
 	margin-top: 45px;
 	text-align: left;
 	margin-left: 15px;
@@ -654,6 +664,7 @@ Edit profile information
 }
 
 .comment-likes {
+	color: #3eb60e;
 	font-size: 18px;
 	float: right;
 }
@@ -703,6 +714,7 @@ Main User Proifle Layout
 	grid-template-areas: "u u u p p p p p p";
 	grid-template-rows: 250px;
 	border-radius: 5px;
+	margin: 20px 5px;
 }
 
 .user-profile {
@@ -723,6 +735,7 @@ img[class="profile-picture"] {
 
 .profile-picture {
 	height: 100%;
+	border-radius: 5px;
 }
 
 .user-profile-username {
@@ -736,7 +749,7 @@ img[class="profile-picture"] {
 	grid-area: p;
 	height: 90%;
 	width: 95%;
-	border: 6px solid #fff;
+	padding: 10px;
 	border-radius: 8px;
 	min-width: 95%;
 	min-height: 140px;
@@ -767,7 +780,7 @@ img[class="profile-picture"] {
 }
 
 .article-body {
-	color: #4d6839;
+	color: #ff5420;
 	letter-spacing: .5px;
 	word-spacing: 1px;
 	text-align: left;
@@ -779,6 +792,10 @@ img[class="profile-picture"] {
 
 abbr {
 	text-decoration: none;
+}
+
+.no-articles {
+	margin: 5px auto;
 }
 
 .article-body::first-letter {
@@ -801,6 +818,8 @@ abbr {
 											"descr descr";
 	grid-auto-rows: 80px;
 	grid-gap: 15px;
+	padding: 10px;
+	border-radius: 9px;
 }
 
 #profile-pic {
@@ -814,6 +833,7 @@ abbr {
 #profile-pic-image {
 	width: 100%;
 	height: 100%;
+	border-radius: 5px;
 }
 
 #profile-descr {
@@ -842,6 +862,7 @@ abbr {
 }
 
 .profile-label {
+	font-size: .7em;
 	color: #89d814d2;
 }
 
@@ -857,7 +878,9 @@ abbr {
 
 #article-listing {
 	margin: 20px auto;
-	font-size: 40px;
+	font-size: 36px;
+	font-style: italic;
+	color: #c0ac51;
 }
 
 .user-articles {
