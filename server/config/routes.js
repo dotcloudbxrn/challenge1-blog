@@ -3,7 +3,7 @@ const auth = require('./auth')
 const multer = require('multer')
 let storage = require('./multerStorage')
 
-let upload = multer(storage )
+let upload = multer(storage)
 
 module.exports = (app) => {
 	app.get('/', controllers.home.index)
@@ -13,19 +13,19 @@ module.exports = (app) => {
 	app.post('/user/login', controllers.user.loginPost)
 	app.post('/user/logout', controllers.user.logout)
 	app.get('/user/profile/:id', controllers.user.getProfile)
+	app.get('/user/edit-profile/:id', auth.isAuthenticated, controllers.user.editProfileGet)
+	app.post('/user/edit-profile/:id', auth.isAuthenticated, upload.single('avatar'), controllers.user.editProfilePost)
+	app.get('/user/comments/:id', controllers.user.getComments)
+	app.get('/check/user', controllers.article.sendUser)
 	app.get('/article/create', auth.isAuthenticated, controllers.article.createArticleGet)
 	app.post('/article/create', auth.isAuthenticated, controllers.article.createArticlePost)
 	app.get('/article/details/:id', controllers.article.detailsGet)
-	app.get('/user/edit-profile/:id', auth.isAuthenticated, controllers.user.editProfileGet)
-	app.post('/user/edit-profile/:id', auth.isAuthenticated, upload.single('avatar'), controllers.user.editProfilePost)
 	app.get('/article/list/:id', controllers.article.listArticles),
 	app.post('/article/postComment/:articleId/:userId', auth.isAuthenticated, controllers.article.addComment)
-	app.get('/user/comments/:id', controllers.user.getComments)
 	app.get('/article/edit/:id', auth.isAuthenticated, controllers.article.editGet)
 	app.post('/article/edit/:id', auth.isAuthenticated, controllers.article.editPost)
 	app.get('/article/delete/:id', auth.isAuthenticated, controllers.article.deleteGet)
 	app.post('/article/delete/:id', auth.isAuthenticated, controllers.article.deletePost)
-	app.get('/check/user', controllers.article.sendUser)
 	app.post('/comment/like', controllers.article.likeComment)
 	app.post('/comment/dislike', auth.isAuthenticated, controllers.article.dislikeComment)
 }
